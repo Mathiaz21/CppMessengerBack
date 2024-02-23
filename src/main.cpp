@@ -19,7 +19,7 @@ int main() {
     mongocxx::uri uri("mongodb://localhost:27017");
     mongocxx::client client(uri);
 
-    auto db = client["messages"];
+    auto db = client["Messengerdb"];
 
 
     return 0;   
