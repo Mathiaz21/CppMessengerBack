@@ -10,16 +10,6 @@ add_subdirectory("./src")
 add_executable(MessengerppBack main.cpp)
 
 
-# target_include_directories( MessengerppBack
-#     PUBLIC "/usr/local/include/mongocxx/v_noabi"
-#     PUBLIC "/usr/local/include/bsoncxx/v_noabi"
-#     PUBLIC "/usr/local/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc"
-#     )
-
-# link_directories("/usr/local/lib")
-
 target_link_libraries(MessengerppBack 
-#     mongocxx
-#     bsoncxx
     BackFunctions
     )

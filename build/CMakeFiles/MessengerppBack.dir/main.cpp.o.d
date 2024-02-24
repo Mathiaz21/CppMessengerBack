@@ -320,4 +320,5 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: \
  /usr/local/include/mongocxx/v_noabi/mongocxx/options/tls.hpp \
  /usr/local/include/mongocxx/v_noabi/mongocxx/options/client_encryption.hpp \
  /usr/local/include/mongocxx/v_noabi/mongocxx/uri.hpp \
- /usr/local/include/mongocxx/v_noabi/mongocxx/instance.hpp
+ /usr/local/include/mongocxx/v_noabi/mongocxx/instance.hpp \
+ /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/./src/Datatypes.hpp

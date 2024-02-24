@@ -83,17 +83,33 @@ src/CMakeFiles/BackFunctions.dir/DbCommunication.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BackFunctions.dir/DbCommunication.cpp.s"
 	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/src/DbCommunication.cpp -o CMakeFiles/BackFunctions.dir/DbCommunication.cpp.s
 
+src/CMakeFiles/BackFunctions.dir/DataTypes.cpp.o: src/CMakeFiles/BackFunctions.dir/flags.make
+src/CMakeFiles/BackFunctions.dir/DataTypes.cpp.o: ../src/DataTypes.cpp
+src/CMakeFiles/BackFunctions.dir/DataTypes.cpp.o: src/CMakeFiles/BackFunctions.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/BackFunctions.dir/DataTypes.cpp.o"
+	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/BackFunctions.dir/DataTypes.cpp.o -MF CMakeFiles/BackFunctions.dir/DataTypes.cpp.o.d -o CMakeFiles/BackFunctions.dir/DataTypes.cpp.o -c /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/src/DataTypes.cpp
+
+src/CMakeFiles/BackFunctions.dir/DataTypes.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BackFunctions.dir/DataTypes.cpp.i"
+	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/src/DataTypes.cpp > CMakeFiles/BackFunctions.dir/DataTypes.cpp.i
+
+src/CMakeFiles/BackFunctions.dir/DataTypes.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BackFunctions.dir/DataTypes.cpp.s"
+	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/src/DataTypes.cpp -o CMakeFiles/BackFunctions.dir/DataTypes.cpp.s
+
 # Object files for target BackFunctions
 BackFunctions_OBJECTS = \
-"CMakeFiles/BackFunctions.dir/DbCommunication.cpp.o"
+"CMakeFiles/BackFunctions.dir/DbCommunication.cpp.o" \
+"CMakeFiles/BackFunctions.dir/DataTypes.cpp.o"
 
 # External object files for target BackFunctions
 BackFunctions_EXTERNAL_OBJECTS =
 
 src/libBackFunctions.a: src/CMakeFiles/BackFunctions.dir/DbCommunication.cpp.o
+src/libBackFunctions.a: src/CMakeFiles/BackFunctions.dir/DataTypes.cpp.o
 src/libBackFunctions.a: src/CMakeFiles/BackFunctions.dir/build.make
 src/libBackFunctions.a: src/CMakeFiles/BackFunctions.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libBackFunctions.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libBackFunctions.a"
 	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build/src && $(CMAKE_COMMAND) -P CMakeFiles/BackFunctions.dir/cmake_clean_target.cmake
 	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/BackFunctions.dir/link.txt --verbose=$(VERBOSE)
 

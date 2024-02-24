@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/BackFunctions.dir/DataTypes.cpp.o"
+  "CMakeFiles/BackFunctions.dir/DataTypes.cpp.o.d"
   "CMakeFiles/BackFunctions.dir/DbCommunication.cpp.o"
   "CMakeFiles/BackFunctions.dir/DbCommunication.cpp.o.d"
   "libBackFunctions.a"

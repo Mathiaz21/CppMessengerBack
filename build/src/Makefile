@@ -130,6 +130,30 @@ BackFunctions/fast:
 	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/BackFunctions.dir/build.make src/CMakeFiles/BackFunctions.dir/build
 .PHONY : BackFunctions/fast
 
+DataTypes.o: DataTypes.cpp.o
+.PHONY : DataTypes.o
+
+# target to build an object file
+DataTypes.cpp.o:
+	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/BackFunctions.dir/build.make src/CMakeFiles/BackFunctions.dir/DataTypes.cpp.o
+.PHONY : DataTypes.cpp.o
+
+DataTypes.i: DataTypes.cpp.i
+.PHONY : DataTypes.i
+
+# target to preprocess a source file
+DataTypes.cpp.i:
+	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/BackFunctions.dir/build.make src/CMakeFiles/BackFunctions.dir/DataTypes.cpp.i
+.PHONY : DataTypes.cpp.i
+
+DataTypes.s: DataTypes.cpp.s
+.PHONY : DataTypes.s
+
+# target to generate assembly for a file
+DataTypes.cpp.s:
+	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/BackFunctions.dir/build.make src/CMakeFiles/BackFunctions.dir/DataTypes.cpp.s
+.PHONY : DataTypes.cpp.s
+
 DbCommunication.o: DbCommunication.cpp.o
 .PHONY : DbCommunication.o
 
@@ -163,6 +187,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... BackFunctions"
+	@echo "... DataTypes.o"
+	@echo "... DataTypes.i"
+	@echo "... DataTypes.s"
 	@echo "... DbCommunication.o"
 	@echo "... DbCommunication.i"
 	@echo "... DbCommunication.s"
