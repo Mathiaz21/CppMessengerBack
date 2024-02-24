@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build/CMakeFiles /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build/CMakeFiles /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build/src//CMakeFiles/progress.marks
+	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,68 +103,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named MessengerppBack
+# Convenience name for target.
+src/CMakeFiles/BackFunctions.dir/rule:
+	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/BackFunctions.dir/rule
+.PHONY : src/CMakeFiles/BackFunctions.dir/rule
 
-# Build rule for target.
-MessengerppBack: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MessengerppBack
-.PHONY : MessengerppBack
-
-# fast build rule for target.
-MessengerppBack/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MessengerppBack.dir/build.make CMakeFiles/MessengerppBack.dir/build
-.PHONY : MessengerppBack/fast
-
-#=============================================================================
-# Target rules for targets named BackFunctions
-
-# Build rule for target.
-BackFunctions: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 BackFunctions
+# Convenience name for target.
+BackFunctions: src/CMakeFiles/BackFunctions.dir/rule
 .PHONY : BackFunctions
 
 # fast build rule for target.
 BackFunctions/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/BackFunctions.dir/build.make src/CMakeFiles/BackFunctions.dir/build
+	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/BackFunctions.dir/build.make src/CMakeFiles/BackFunctions.dir/build
 .PHONY : BackFunctions/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+DbCommunication.o: DbCommunication.cpp.o
+.PHONY : DbCommunication.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MessengerppBack.dir/build.make CMakeFiles/MessengerppBack.dir/main.cpp.o
-.PHONY : main.cpp.o
+DbCommunication.cpp.o:
+	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/BackFunctions.dir/build.make src/CMakeFiles/BackFunctions.dir/DbCommunication.cpp.o
+.PHONY : DbCommunication.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+DbCommunication.i: DbCommunication.cpp.i
+.PHONY : DbCommunication.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MessengerppBack.dir/build.make CMakeFiles/MessengerppBack.dir/main.cpp.i
-.PHONY : main.cpp.i
+DbCommunication.cpp.i:
+	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/BackFunctions.dir/build.make src/CMakeFiles/BackFunctions.dir/DbCommunication.cpp.i
+.PHONY : DbCommunication.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+DbCommunication.s: DbCommunication.cpp.s
+.PHONY : DbCommunication.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MessengerppBack.dir/build.make CMakeFiles/MessengerppBack.dir/main.cpp.s
-.PHONY : main.cpp.s
+DbCommunication.cpp.s:
+	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/BackFunctions.dir/build.make src/CMakeFiles/BackFunctions.dir/DbCommunication.cpp.s
+.PHONY : DbCommunication.cpp.s
 
 # Help Target
 help:
@@ -175,10 +163,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... BackFunctions"
-	@echo "... MessengerppBack"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... DbCommunication.o"
+	@echo "... DbCommunication.i"
+	@echo "... DbCommunication.s"
 .PHONY : help
 
 
@@ -190,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

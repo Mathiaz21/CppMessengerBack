@@ -1,0 +1,2 @@
+/usr/bin/ar qc libBackFunctions.a CMakeFiles/BackFunctions.dir/DbCommunication.cpp.o
+/usr/bin/ranlib libBackFunctions.a

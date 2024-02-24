@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/MessengerppBack.dir/main.cpp.o -o MessengerppBack  -lmongocxx -lbsoncxx 
+/usr/bin/c++ CMakeFiles/MessengerppBack.dir/main.cpp.o -o MessengerppBack  src/libBackFunctions.a -lmongocxx -lbsoncxx 

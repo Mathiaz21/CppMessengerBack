@@ -1,2 +1,2 @@
-# Empty dependencies file for lmongocxx.
+# Empty dependencies file for BackFunctions.
 # This may be replaced when dependencies are built.
