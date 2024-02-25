@@ -23,27 +23,27 @@ using bsoncxx::builder::basic::make_document;
 class DbCommunicator {
 
     private:
+
+        // Variables
         mongocxx::database db;
         mongocxx::collection utilisateursCollection;
         mongocxx::collection conversationsCollection;
         mongocxx::collection messagesCollection;
-        
-        
 
     public:
-        mongocxx::collection getUtilisateursCollection() { return this->utilisateursCollection; };
-        mongocxx::collection getConversationsCollection() { return this->conversationsCollection; };
-        mongocxx::collection getMessagesCollection() { return this->messagesCollection; };
+
+        // Getters
+        mongocxx::collection getUtilisateursCollection();
+        mongocxx::collection getConversationsCollection();
+        mongocxx::collection getMessagesCollection();
 
         void addMessage(Message message);
 
     // Constructors
-    DbCommunicator(mongocxx::database theDb) {
-        this->db = theDb;
-        this->utilisateursCollection = db["utilisateurs"];
-        this->conversationsCollection = db["conversations"];
-        this->messagesCollection = db["messages"];
-    }
+    DbCommunicator(mongocxx::database theDb);
+
+    // Destructor
+    ~DbCommunicator();
 };
 
 #endif // DB_COMMUNICATION_HPP
