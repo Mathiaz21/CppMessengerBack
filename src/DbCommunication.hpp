@@ -39,9 +39,9 @@ class DbCommunicator {
 
         // Mongo Queries
         void addMessage(Message message);
-        void getMessage(Message *message, char *id);
 
-        void addUser()
+        void addUser(User user);
+        void queryUserById(User *user, int theUserId);
 
     // Constructors
     DbCommunicator(mongocxx::database theDb);

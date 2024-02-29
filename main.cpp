@@ -15,11 +15,11 @@ int main() {
     mongocxx::client client(uri);
     mongocxx::database theDb = client["Messengerdb"];
 
-
-    Message message = Message(346,2,1, "Oui et toi ?");
-
     DbCommunicator dbCommunicator = DbCommunicator(theDb);
-    dbCommunicator.addMessage(message);
+
+    User utilisateur = User(1, "Vide", "Vide");
+    dbCommunicator.queryUserById(&utilisateur, 1);
+    std::cout << utilisateur.getPseudo() << utilisateur.getPassword() <<"\n\n";
 
     return 0;   
 }

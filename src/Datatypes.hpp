@@ -52,5 +52,33 @@ class Message {
 
 };
 
+class User {
+
+    private:
+
+        // Variables
+        int userId;
+        std::string pseudo;
+        std::string password;
+    
+    public:
+
+        // Getters
+        int getId();
+        std::string getPseudo();
+        std::string getPassword();
+        bool testPassword(std::string testPassword);
+
+        // Setters
+        void setId(int theId);
+        void setPseudo(std::string thePseudo);
+        void setPassword(std::string thePassword);
+
+        User(int theUserId, std::string thePseudo, std::string thePassword);
+
+        ~User();
+
+};
+
 
 #endif //DATA_TYPES_HPP

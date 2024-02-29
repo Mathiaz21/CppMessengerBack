@@ -61,3 +61,23 @@ Message::~Message(){};
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * */
 
+// Getters
+int User::getId(){ return this->userId; };
+std::string User::getPseudo(){ return this->pseudo; };
+std::string User::getPassword(){ return this->password; };
+bool User::testPassword(std::string testPassword) {return testPassword == this->password; };
+
+// Setters
+void User::setId(int theId) {this->userId = theId; };
+void User::setPseudo(std::string thePseudo){this->pseudo = thePseudo; };
+void User::setPassword(std::string thePassword){ this->password = thePassword; };
+
+// Constructor
+User::User(int theUserId, std::string thePseudo, std::string thePassword){
+    this->userId = theUserId;
+    this->pseudo = thePseudo;
+    this->password = thePassword;
+};
+
+// Destructor
+User::~User(){};
