@@ -7,6 +7,10 @@ void DbCommunicator::addMessage(Message message) {
         kvp("contenu", message.getContenu())
     ));
 }
+void DbCommunicator::getMessage(Message *message, char *id){
+    auto message = this->getMessagesCollection().find_one({});
+}
+
 
 mongocxx::collection DbCommunicator::getUtilisateursCollection() { return this->utilisateursCollection; };
 mongocxx::collection DbCommunicator::getConversationsCollection() { return this->conversationsCollection; };

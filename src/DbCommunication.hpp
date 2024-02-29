@@ -37,7 +37,11 @@ class DbCommunicator {
         mongocxx::collection getConversationsCollection();
         mongocxx::collection getMessagesCollection();
 
+        // Mongo Queries
         void addMessage(Message message);
+        void getMessage(Message *message, char *id);
+
+        void addUser()
 
     // Constructors
     DbCommunicator(mongocxx::database theDb);

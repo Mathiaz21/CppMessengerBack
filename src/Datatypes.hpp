@@ -53,45 +53,4 @@ class Message {
 };
 
 
-class Conversation {
-
-private:
-    int idConv;
-    int idFirstPers;
-    int idSecPers;
-    std::string convName;
-    Message *messages;
-    int convSize;
-
-public:
-    std::string getConvName() {return this->convName; };
-    int getConvSize() { return this->convSize; };
-
-    void setName(std::string newName) {this->convName = newName; };
-    void setConvSize(int newConvSize) {this->convSize = newConvSize; };
-    // void addMsg(Message newMsg);
-    // void editMsg(int idMsg, std::string newContent);
-    // void deleteMsg(int idMsg);
-
-    // Constructors
-    Conversation(int theIdConv, int theIdFirstPers, int theIdSecPers, std::string theConvName){
-        this->idConv = theIdConv;
-        this->idFirstPers = theIdFirstPers;
-        this->idSecPers = theIdSecPers;
-        this->convName = theConvName;
-    };
-
-    Conversation(int theIdConv, int theIdFirstPers, int theIdSecPers, std::string theConvName, Message* theMessages, int theConvSize){
-        this->idConv = theIdConv;
-        this->idFirstPers = theIdFirstPers;
-        this->idSecPers = theIdSecPers;
-        this->convName = theConvName;
-        this->messages = theMessages;
-        this->convSize = theConvSize;
-    };
-
-    ~Conversation(){};
-};
-
-
 #endif //DATA_TYPES_HPP
