@@ -53,6 +53,13 @@ Message::Message(int theIdMessage, int theIdAuteur, int theIdDestinataire, std::
     this->contenu = theContenu;
     this->heureEnvoi = time(0);
 } 
+Message::Message(int theIdAuteur, int theIdDestinataire, std::string theContenu){
+    this->idAuteur = theIdAuteur;
+    this->idDestinataire = theIdDestinataire;
+    this->contenu = theContenu;
+    this->heureEnvoi = time(0);
+}
+
 
 //Destructor
 Message::~Message(){};

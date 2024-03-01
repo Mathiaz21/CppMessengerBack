@@ -46,6 +46,7 @@ class Message {
     // Constructors
     Message(int theIdMessage, int theIdAuteur, int theIdDestinataire);
     Message(int theIdMessage, int theIdAuteur, int theIdDestinataire, std::string theContenu);
+    Message(int theIdAuteur, int theIdDestinataire, std::string theContenu);
 
     // Destructor
     ~Message();

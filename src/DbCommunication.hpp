@@ -39,6 +39,8 @@ class DbCommunicator {
 
         // Mongo Queries
         void addMessage(Message message);
+        int queryConversationLength(int theUserId1, int theUserId2);
+        void queryConversation(Message *message, int convLen, int theUserId1, int theUserId2);
 
         void addUser(User user);
         void queryUserById(User *user, int theUserId);

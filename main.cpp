@@ -17,9 +17,11 @@ int main() {
 
     DbCommunicator dbCommunicator = DbCommunicator(theDb);
 
-    User utilisateur = User(1, "Vide", "Vide");
-    dbCommunicator.queryUserById(&utilisateur, 1);
-    std::cout << utilisateur.getPseudo() << utilisateur.getPassword() <<"\n\n";
+    Message message = Message(1,2,"Je mange des frites");
+    dbCommunicator.addMessage(message);
+
+    int longueurConv = dbCommunicator.queryConversationLength(1,2);
+    std::cout << longueurConv << "\n";
 
     return 0;   
 }
