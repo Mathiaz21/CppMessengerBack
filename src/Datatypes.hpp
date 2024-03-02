@@ -9,7 +9,7 @@ class Message {
 
     private:
         // Variables 
-        int idMessage;
+        std::string idMessage;
         int idAuteur;
         int idDestinataire;
         std::string contenu;
@@ -20,7 +20,7 @@ class Message {
 
     public:
         // Getters
-        int getIdMessage();
+        std::string getIdMessage();
         int getIdAuteur();
         int getIdDestinataire();
         std::string getContenu();
@@ -31,7 +31,7 @@ class Message {
         
 
         // Setters
-        void setIdMessage(int newId);
+        void setIdMessage(std::string newId);
         void setIdAuteur(int newId);
         void setIdDestinataire(int newId);
         void setContenu(std::string newContenu);
@@ -43,13 +43,18 @@ class Message {
         //Debugging
         void printMessage();
 
-    // Constructors
-    Message(int theIdMessage, int theIdAuteur, int theIdDestinataire);
-    Message(int theIdMessage, int theIdAuteur, int theIdDestinataire, std::string theContenu);
-    Message(int theIdAuteur, int theIdDestinataire, std::string theContenu);
+        // Utilities
+        void copyMessage(Message newMessage);
 
-    // Destructor
-    ~Message();
+
+        // Constructors
+        Message();
+        Message(std::string theIdMessage, int theIdAuteur, int theIdDestinataire);
+        Message(std::string theIdMessage, int theIdAuteur, int theIdDestinataire, std::string theContenu);
+        Message(int theIdAuteur, int theIdDestinataire, std::string theContenu);
+
+        // Destructor
+        ~Message();
 
 };
 

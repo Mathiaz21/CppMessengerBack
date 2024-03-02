@@ -39,17 +39,22 @@ class DbCommunicator {
 
         // Mongo Queries
         void addMessage(Message message);
+        // void openMessageCollection();
         int queryConversationLength(int theUserId1, int theUserId2);
         void queryConversation(Message *message, int convLen, int theUserId1, int theUserId2);
+        void deleteMessageById(std::string messageId);
 
         void addUser(User user);
         void queryUserById(User *user, int theUserId);
 
-    // Constructors
-    DbCommunicator(mongocxx::database theDb);
+        // Utilities
+        static void setMessageFromView(Message *message, bsoncxx::v_noabi::document::view view);
 
-    // Destructor
-    ~DbCommunicator();
+        // Constructors
+        DbCommunicator(mongocxx::database theDb);
+
+        // Destructor
+        ~DbCommunicator();
 };
 
 #endif // DB_COMMUNICATION_HPP

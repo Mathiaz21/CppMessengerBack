@@ -17,11 +17,13 @@ int main() {
 
     DbCommunicator dbCommunicator = DbCommunicator(theDb);
 
-    Message message = Message(1,2,"Je mange des frites");
-    dbCommunicator.addMessage(message);
-
     int longueurConv = dbCommunicator.queryConversationLength(1,2);
-    std::cout << longueurConv << "\n";
+    // std::cout << "Longueur de conv : " << longueurConv << "\n";
+    Message messageList[longueurConv];
+    dbCommunicator.queryConversation(messageList, longueurConv, 1,2);
+    for(int i = 0; i < longueurConv; i++) {
+        messageList[i].printMessage();
+    }
 
     return 0;   
 }

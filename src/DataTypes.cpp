@@ -4,7 +4,7 @@
 
 
 // Getters
-int Message::getIdMessage() { return this->idMessage; };
+std::string Message::getIdMessage() { return this->idMessage; };
 int Message::getIdAuteur() { return this->idAuteur; };
 int Message::getIdDestinataire() { return this->idDestinataire; };
 std::string Message::getContenu() { return this->contenu; };
@@ -15,7 +15,7 @@ std::time_t Message::getHeureLecture() { return this->heureLecture; };
 
 
 // Setters
-void Message::setIdMessage(int newId) { this->idMessage = newId; };
+void Message::setIdMessage(std::string newId) { this->idMessage = newId; };
 void Message::setIdAuteur(int newId) { this->idAuteur = newId; };
 void Message::setIdDestinataire(int newId) { this->idDestinataire = newId; };
 void Message::setContenu(std::string newContenu) { this->contenu = newContenu; };
@@ -38,15 +38,28 @@ void Message::printMessage(){
         << "_________\n\n";
 }
 
+// Utilities
+void Message::copyMessage(Message newMessage) {
+    this->setIdMessage( newMessage.getIdMessage() );
+    this->setIdAuteur( newMessage.getIdAuteur() );
+    this->setIdDestinataire( newMessage.getIdDestinataire() );
+    this->setContenu( newMessage.getContenu() );
+    this->setHeureEnvoi( newMessage.getHeureEnvoi() );
+    this->setHeureReception( newMessage.getHeureReception() );
+    this->setHeureLecture( newMessage.getHeureLecture() );
+    this->setReaction( newMessage.getReaction() );
+}
+
 // Constructors
-Message::Message(int theIdMessage, int theIdAuteur, int theIdDestinataire) {
+Message::Message() {};
+Message::Message(std::string theIdMessage, int theIdAuteur, int theIdDestinataire) {
     this->idMessage = theIdMessage;
     this->idAuteur = theIdAuteur;
     this->idDestinataire = theIdDestinataire;
     this->contenu = "";
     this->heureEnvoi = time(0);
 }
-Message::Message(int theIdMessage, int theIdAuteur, int theIdDestinataire, std::string theContenu) {
+Message::Message(std::string theIdMessage, int theIdAuteur, int theIdDestinataire, std::string theContenu) {
     this->idMessage = theIdMessage;
     this->idAuteur = theIdAuteur;
     this->idDestinataire = theIdDestinataire;
