@@ -25,6 +25,7 @@ int main() {
         messageList[i].printMessage();
     }*/
 
+    /*
     int nbUsers = dbCommunicator.queryNumberOfUsers();
     std::cout << "Nb users : " << nbUsers << "\n";
     User userList[nbUsers];
@@ -32,6 +33,7 @@ int main() {
     for( User user: userList) {
         std::cout << "Utilisateur : " << user.getPseudo() << "\n";
     }
-
+    */
+    dbCommunicator.deleteConversation(1,2);
     return 0;   
 }

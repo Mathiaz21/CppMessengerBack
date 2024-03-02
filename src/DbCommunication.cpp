@@ -16,6 +16,10 @@ void DbCommunicator::addMessage(Message message) {
     ));
 }
 
+void DbCommunicator::deleteMessageById(std::string messageId) {
+    this->getMessagesCollection().delete_one(make_document(kvp("_id", bsoncxx::oid(messageId))));
+}
+
 int DbCommunicator::queryConversationLength(int theUserId1, int theUserId2){
     int result = 0;
     int ids[2] = {theUserId1, theUserId2};
@@ -55,9 +59,16 @@ void DbCommunicator::queryConversation(Message *messageList, int convLen, int th
     };
 }
 
-void DbCommunicator::deleteMessageById(std::string messageId) {
-    this->getMessagesCollection().delete_one(make_document(kvp("_id", bsoncxx::oid(messageId))));
+void DbCommunicator::deleteConversation(int theUserId1, int theUserId2) {
+    int convLength = queryConversationLength(theUserId1, theUserId2);
+    Message messageList[convLength];
+    queryConversation(messageList, convLength, theUserId1, theUserId2);
+    for(Message message: messageList){
+        std::string messageId = message.getIdMessage();
+        deleteMessageById(messageId);
+    }
 }
+
 
 void DbCommunicator::addUser(User user) {
     this->getUtilisateursCollection().insert_one(make_document(
