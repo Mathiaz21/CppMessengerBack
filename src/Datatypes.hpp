@@ -80,8 +80,14 @@ class User {
         void setPseudo(std::string thePseudo);
         void setPassword(std::string thePassword);
 
+        // Utilities
+        void copyUser(User newUser);
+
+        // Constructors
+        User();
         User(int theUserId, std::string thePseudo, std::string thePassword);
 
+        // Destructor
         ~User();
 
 };

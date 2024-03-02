@@ -46,9 +46,12 @@ class DbCommunicator {
 
         void addUser(User user);
         void queryUserById(User *user, int theUserId);
+        int queryNumberOfUsers();
+        void queryUserList(User *userList, int nbOfUsers);
 
         // Utilities
         static void setMessageFromView(Message *message, bsoncxx::v_noabi::document::view view);
+        static void setUserFromView(User *user, bsoncxx::v_noabi::document::view view);
 
         // Constructors
         DbCommunicator(mongocxx::database theDb);

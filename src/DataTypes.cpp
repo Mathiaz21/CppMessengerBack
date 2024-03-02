@@ -92,7 +92,15 @@ void User::setId(int theId) {this->userId = theId; };
 void User::setPseudo(std::string thePseudo){this->pseudo = thePseudo; };
 void User::setPassword(std::string thePassword){ this->password = thePassword; };
 
+// Utilities
+void User::copyUser(User newUser) {
+    this->setId( newUser.getId() );
+    this->setPseudo( newUser.getPseudo() );
+    this->setPassword( newUser.getPassword() );
+}
+
 // Constructor
+User::User(){};
 User::User(int theUserId, std::string thePseudo, std::string thePassword){
     this->userId = theUserId;
     this->pseudo = thePseudo;

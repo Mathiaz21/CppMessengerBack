@@ -53,7 +53,6 @@ void DbCommunicator::queryConversation(Message *messageList, int convLen, int th
             }
         }
     };
-
 }
 
 void DbCommunicator::deleteMessageById(std::string messageId) {
@@ -81,12 +80,36 @@ void DbCommunicator::queryUserById(User *user, int theUserId) {
     (*user).setPassword( thePassword );
 }
 
+int DbCommunicator::queryNumberOfUsers() {
+    int result = 0;
+    auto cursor = this->getUtilisateursCollection().find( {} );
+    for( auto doc: cursor){
+        result++;
+    }
+    return result;
+}
 
+void DbCommunicator::queryUserList(User *userList, int nbOfUsers) {
+    int count = 0;
+    auto cursor = this->getUtilisateursCollection().find({});
+    for(auto messageView: cursor){
+        if(count < nbOfUsers) {
+            User userBuffer;
+            setUserFromView(&userBuffer, messageView);
+            userList[count].copyUser(userBuffer);
+            count++;
+        }
+    }
+}
+
+
+// Utilities
 void DbCommunicator::setMessageFromView(Message *message, bsoncxx::v_noabi::document::view view) {
     std::string theMessageId = view["_id"].get_oid().value.to_string();
     int theSenderId = view["idAuteur"].get_int32().value;
     int theReceiverId = view["idDestinataire"].get_int32().value;
     std::string theContent = view["contenu"].get_string().value.to_string();
+
     message->setIdMessage( theMessageId );
     message->setIdAuteur( theSenderId );
     message->setIdDestinataire( theReceiverId );
@@ -94,7 +117,18 @@ void DbCommunicator::setMessageFromView(Message *message, bsoncxx::v_noabi::docu
 
 }
 
+void DbCommunicator::setUserFromView(User *user, bsoncxx::v_noabi::document::view view){
+    int theUserId = view["userId"].get_int32().value;
+    std::string thePseudo = view["pseudo"].get_string().value.to_string();
+    std::string thePassword = view["password"].get_string().value.to_string();
+    
+    user->setId( theUserId );
+    user->setPseudo( thePseudo );
+    user->setPassword (thePassword );
+}
 
+
+// Constructor
 DbCommunicator::DbCommunicator(mongocxx::database theDb) {
     this->db = theDb;
     this->utilisateursCollection = db["utilisateurs"];
@@ -102,4 +136,5 @@ DbCommunicator::DbCommunicator(mongocxx::database theDb) {
     this->messagesCollection = db["messages"];
 };
 
+// Destructor
 DbCommunicator::~DbCommunicator(){};

@@ -16,13 +16,21 @@ int main() {
     mongocxx::database theDb = client["Messengerdb"];
 
     DbCommunicator dbCommunicator = DbCommunicator(theDb);
-
+    
+    /*
     int longueurConv = dbCommunicator.queryConversationLength(1,2);
-    // std::cout << "Longueur de conv : " << longueurConv << "\n";
     Message messageList[longueurConv];
     dbCommunicator.queryConversation(messageList, longueurConv, 1,2);
     for(int i = 0; i < longueurConv; i++) {
         messageList[i].printMessage();
+    }*/
+
+    int nbUsers = dbCommunicator.queryNumberOfUsers();
+    std::cout << "Nb users : " << nbUsers << "\n";
+    User userList[nbUsers];
+    dbCommunicator.queryUserList(userList, nbUsers);
+    for( User user: userList) {
+        std::cout << "Utilisateur : " << user.getPseudo() << "\n";
     }
 
     return 0;   
