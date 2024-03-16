@@ -1,43 +1,14 @@
-#include <iostream>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <unistd.h>
-#include <string.h>
+#include "CommFront.hpp"
 
-
-class FrontCommunicator {
-    
-    private:
-        int server_fd, new_socket;
-        struct sockaddr_in address;
-        int opt = 1;
-        int addrlen = sizeof(address);
-        char buffer[1024] = {0};
-
-    public:
-        FrontCommunicator();
-
-}
-
-int main() {
-  int server_fd, new_socket;
-  struct sockaddr_in address;
-  int opt = 1;
-  int addrlen = sizeof(address);
-  char buffer[1024] = {0};
-
-  // Créer un socket
+FrontCommunicator::FrontCommunicator() {
+    // Créer un socket
   if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0) {
     std::cerr << "Erreur lors de la création du socket" << std::endl;
-    return 1;
   }
 
   // Configurer le socket pour réutiliser l'adresse et le port
   if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, &opt, sizeof(opt))) {
     std::cerr << "Erreur lors de la configuration du socket" << std::endl;
-    return 1;
   }
 
   address.sin_family = AF_INET;
@@ -47,19 +18,16 @@ int main() {
   // Associer le socket à une adresse et un port
   if (bind(server_fd, (struct sockaddr *)&address, sizeof(address)) < 0) {
     std::cerr << "Erreur lors de la liaison du socket" << std::endl;
-    return 1;
   }
 
   // Écouter les connexions entrantes
   if (listen(server_fd, 3) < 0) {
     std::cerr << "Erreur lors de l'écoute du socket" << std::endl;
-    return 1;
   }
 
   // Accepter les connexions entrantes
   if ((new_socket = accept(server_fd, (struct sockaddr *)&address, (socklen_t*)&addrlen)) < 0) {
     std::cerr << "Erreur lors de l'acceptation de la connexion" << std::endl;
-    return 1;
   }
 
   // Envoyer un message de réponse au client
@@ -73,5 +41,4 @@ int main() {
   close(server_fd);
   close(new_socket);
 
-  return 0;
 }

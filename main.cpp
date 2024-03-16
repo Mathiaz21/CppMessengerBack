@@ -5,6 +5,7 @@
 
 
 #include "./src/DbCommunication.hpp"
+#include "./src/CommFront.hpp"
 
 #define DB_ADDRESS "mongodb://localhost:27017"
 
@@ -17,6 +18,8 @@ int main() {
     mongocxx::database theDb = client["Messengerdb"];
 
     DbCommunicator dbCommunicator = DbCommunicator(theDb);
+    FrontCommunicator frontCommunicator = FrontCommunicator();
+
     
     /*
     int longueurConv = dbCommunicator.queryConversationLength(1,2);

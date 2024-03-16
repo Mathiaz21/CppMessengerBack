@@ -1,4 +1,4 @@
-add_library(BackFunctions DbCommunication.cpp DataTypes.cpp)
+add_library(BackFunctions DbCommunication.cpp DataTypes.cpp CommFront.cpp)
 
 target_include_directories( BackFunctions
     PUBLIC "/usr/local/include/mongocxx/v_noabi"
