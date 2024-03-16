@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 
+
 #include "./src/DbCommunication.hpp"
 
 #define DB_ADDRESS "mongodb://localhost:27017"
