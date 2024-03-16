@@ -130,6 +130,30 @@ BackFunctions/fast:
 	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/BackFunctions.dir/build.make src/CMakeFiles/BackFunctions.dir/build
 .PHONY : BackFunctions/fast
 
+CommFront.o: CommFront.cpp.o
+.PHONY : CommFront.o
+
+# target to build an object file
+CommFront.cpp.o:
+	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/BackFunctions.dir/build.make src/CMakeFiles/BackFunctions.dir/CommFront.cpp.o
+.PHONY : CommFront.cpp.o
+
+CommFront.i: CommFront.cpp.i
+.PHONY : CommFront.i
+
+# target to preprocess a source file
+CommFront.cpp.i:
+	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/BackFunctions.dir/build.make src/CMakeFiles/BackFunctions.dir/CommFront.cpp.i
+.PHONY : CommFront.cpp.i
+
+CommFront.s: CommFront.cpp.s
+.PHONY : CommFront.s
+
+# target to generate assembly for a file
+CommFront.cpp.s:
+	cd /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/BackFunctions.dir/build.make src/CMakeFiles/BackFunctions.dir/CommFront.cpp.s
+.PHONY : CommFront.cpp.s
+
 DataTypes.o: DataTypes.cpp.o
 .PHONY : DataTypes.o
 
@@ -187,6 +211,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... BackFunctions"
+	@echo "... CommFront.o"
+	@echo "... CommFront.i"
+	@echo "... CommFront.s"
 	@echo "... DataTypes.o"
 	@echo "... DataTypes.i"
 	@echo "... DataTypes.s"

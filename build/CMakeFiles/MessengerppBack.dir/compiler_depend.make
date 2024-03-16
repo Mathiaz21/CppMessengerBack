@@ -370,8 +370,67 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
   /usr/local/include/mongocxx/v_noabi/mongocxx/options/client_encryption.hpp \
   /usr/local/include/mongocxx/v_noabi/mongocxx/uri.hpp \
   /usr/local/include/mongocxx/v_noabi/mongocxx/instance.hpp \
-  ../src/Datatypes.hpp
+  ../src/Datatypes.hpp \
+  ../src/commFront.hpp \
+  /usr/include/x86_64-linux-gnu/sys/socket.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
+  /usr/include/x86_64-linux-gnu/bits/socket.h \
+  /usr/include/x86_64-linux-gnu/bits/socket_type.h \
+  /usr/include/x86_64-linux-gnu/bits/sockaddr.h \
+  /usr/include/x86_64-linux-gnu/asm/socket.h \
+  /usr/include/asm-generic/socket.h \
+  /usr/include/linux/posix_types.h \
+  /usr/include/linux/stddef.h \
+  /usr/include/x86_64-linux-gnu/asm/posix_types.h \
+  /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
+  /usr/include/asm-generic/posix_types.h \
+  /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
+  /usr/include/asm-generic/bitsperlong.h \
+  /usr/include/x86_64-linux-gnu/asm/sockios.h \
+  /usr/include/asm-generic/sockios.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
+  /usr/include/netinet/in.h \
+  /usr/include/x86_64-linux-gnu/bits/in.h \
+  /usr/include/arpa/inet.h \
+  /usr/include/unistd.h \
+  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
+  /usr/include/x86_64-linux-gnu/bits/confname.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+  /usr/include/linux/close_range.h
 
+
+/usr/include/linux/close_range.h:
+
+/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
+
+/usr/include/x86_64-linux-gnu/bits/confname.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
+
+/usr/include/arpa/inet.h:
+
+/usr/include/netinet/in.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h:
+
+/usr/include/asm-generic/sockios.h:
+
+/usr/include/x86_64-linux-gnu/asm/posix_types.h:
+
+/usr/include/linux/posix_types.h:
+
+/usr/include/x86_64-linux-gnu/bits/sockaddr.h:
+
+/usr/include/x86_64-linux-gnu/bits/socket_type.h:
+
+/usr/include/x86_64-linux-gnu/bits/socket.h:
+
+/usr/include/asm-generic/posix_types.h:
+
+../src/commFront.hpp:
 
 ../src/Datatypes.hpp:
 
@@ -465,6 +524,8 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/local/include/mongocxx/v_noabi/mongocxx/bulk_write.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+
 /usr/local/include/mongocxx/v_noabi/mongocxx/result/insert_one.hpp:
 
 /usr/local/include/bsoncxx/v_noabi/bsoncxx/builder/basic/array.hpp:
@@ -522,6 +583,8 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
 
 /usr/include/c++/11/backward/binders.h:
 
@@ -621,6 +684,8 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
+/usr/include/x86_64-linux-gnu/asm/socket.h:
+
 /usr/include/x86_64-linux-gnu/sys/select.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
@@ -639,6 +704,10 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/stringfwd.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h:
+
+/usr/include/x86_64-linux-gnu/sys/socket.h:
+
 /usr/include/c++/11/bits/stl_function.h:
 
 /usr/include/c++/11/bits/memoryfwd.h:
@@ -646,6 +715,8 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/11/bits/predefined_ops.h:
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
 
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
@@ -707,6 +778,8 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h:
 
+/usr/include/unistd.h:
+
 /usr/local/include/mongocxx/v_noabi/mongocxx/model/insert_one.hpp:
 
 /usr/include/c++/11/bits/stl_algobase.h:
@@ -755,7 +828,11 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/features-time64.h:
 
+/usr/include/asm-generic/socket.h:
+
 /usr/include/c++/11/bits/invoke.h:
+
+/usr/include/x86_64-linux-gnu/bits/in.h:
 
 /usr/include/c++/11/bits/postypes.h:
 
@@ -825,6 +902,8 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/local/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/core/optional.hpp:
 
+/usr/include/x86_64-linux-gnu/asm/sockios.h:
+
 /usr/include/c++/11/cstring:
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
@@ -863,9 +942,13 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/local/include/bsoncxx/v_noabi/bsoncxx/stdx/type_traits.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/environments.h:
+
 /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h:
 
 /usr/include/c++/11/bits/exception_defines.h:
+
+/usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
 
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
@@ -878,6 +961,8 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 /usr/include/x86_64-linux-gnu/c++/11/bits/gthr.h:
 
 /usr/include/c++/11/bits/functexcept.h:
+
+/usr/include/asm-generic/bitsperlong.h:
 
 /usr/local/include/mongocxx/v_noabi/mongocxx/config/postlude.hpp:
 
@@ -1050,6 +1135,8 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/11/bits/stl_relops.h:
 
 /usr/include/c++/11/array:
+
+/usr/include/linux/stddef.h:
 
 /usr/include/c++/11/bits/refwrap.h:
 
