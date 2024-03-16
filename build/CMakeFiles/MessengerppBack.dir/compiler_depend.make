@@ -371,7 +371,7 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
   /usr/local/include/mongocxx/v_noabi/mongocxx/uri.hpp \
   /usr/local/include/mongocxx/v_noabi/mongocxx/instance.hpp \
   ../src/Datatypes.hpp \
-  ../src/commFront.hpp \
+  ../src/CommFront.hpp \
   /usr/include/x86_64-linux-gnu/sys/socket.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
   /usr/include/x86_64-linux-gnu/bits/socket.h \
@@ -418,6 +418,8 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asm-generic/sockios.h:
 
+/usr/include/asm-generic/posix_types.h:
+
 /usr/include/x86_64-linux-gnu/asm/posix_types.h:
 
 /usr/include/linux/posix_types.h:
@@ -428,9 +430,7 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/socket.h:
 
-/usr/include/asm-generic/posix_types.h:
-
-../src/commFront.hpp:
+../src/CommFront.hpp:
 
 ../src/Datatypes.hpp:
 

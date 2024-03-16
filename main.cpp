@@ -18,7 +18,7 @@ int main() {
     mongocxx::database theDb = client["Messengerdb"];
 
     DbCommunicator dbCommunicator = DbCommunicator(theDb);
-    FrontCommunicator frontCommunicator = FrontCommunicator();
+    SocketHandler frontCommunicator = SocketHandler();
 
     
     /*

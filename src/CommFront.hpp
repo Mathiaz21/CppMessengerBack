@@ -7,7 +7,7 @@
 #include <string.h>
 
 
-class FrontCommunicator {
+class SocketHandler {
     
     private:
         int server_fd, new_socket;
@@ -17,6 +17,6 @@ class FrontCommunicator {
         char buffer[1024] = {0};
 
     public:
-        FrontCommunicator();
+        SocketHandler();
 
 };

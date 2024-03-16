@@ -1,6 +1,6 @@
 #include "CommFront.hpp"
 
-FrontCommunicator::FrontCommunicator() {
+SocketHandler::SocketHandler() {
     // Créer un socket
   if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0) {
     std::cerr << "Erreur lors de la création du socket" << std::endl;
