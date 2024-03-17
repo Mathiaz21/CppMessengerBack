@@ -1,6 +1,7 @@
 #include <string>
 #include <ctime>
 #include <iostream>
+#include <cstring>
 
 #ifndef DATA_TYPES_HPP
 #define DATA_TYPES_HPP
@@ -9,7 +10,8 @@ class Message {
 
     private:
         // Variables 
-        std::string idMessage;
+        std::string mongoId;
+        int messageId;
         int idAuteur;
         int idDestinataire;
         std::string contenu;
@@ -20,7 +22,8 @@ class Message {
 
     public:
         // Getters
-        std::string getIdMessage();
+        std::string getMongoId();
+        int getMessageId();
         int getIdAuteur();
         int getIdDestinataire();
         std::string getContenu();
@@ -31,7 +34,8 @@ class Message {
         
 
         // Setters
-        void setIdMessage(std::string newId);
+        void setMongoId(std::string newId);
+        void setMessageId(int newId);
         void setIdAuteur(int newId);
         void setIdDestinataire(int newId);
         void setContenu(std::string newContenu);
@@ -45,12 +49,16 @@ class Message {
 
         // Utilities
         void copyMessage(Message newMessage);
+        int unpackInt(char *buffer, int *cursor, char flag);
+        std::string unpackString(char *buffer, int *cursor, char flag);
+        std::time_t unpackTime(char *buffer, int *cursor);
+        int translateFromBuffer(char *buffer, int bufferlength);
 
 
         // Constructors
         Message();
-        Message(std::string theIdMessage, int theIdAuteur, int theIdDestinataire);
-        Message(std::string theIdMessage, int theIdAuteur, int theIdDestinataire, std::string theContenu);
+        Message(std::string theMongoId, int theMessageId, int theIdAuteur, int theIdDestinataire);
+        Message(std::string theMongoId, int theMessageId, int theIdAuteur, int theIdDestinataire, std::string theContenu);
         Message(int theIdAuteur, int theIdDestinataire, std::string theContenu);
 
         // Destructor
