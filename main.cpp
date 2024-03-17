@@ -20,6 +20,8 @@ int main() {
     DbCommunicator dbCommunicator = DbCommunicator(theDb);
     SocketHandler frontCommunicator = SocketHandler();
 
+    frontCommunicator.sendHelloWorld();
+
     
     /*
     int longueurConv = dbCommunicator.queryConversationLength(1,2);
@@ -38,6 +40,6 @@ int main() {
         std::cout << "Utilisateur : " << user.getPseudo() << "\n";
     }
     */
-    dbCommunicator.deleteConversation(1,2);
+    // dbCommunicator.deleteConversation(1,2);
     return 0;   
 }
