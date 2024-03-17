@@ -16,11 +16,14 @@ class SocketHandler {
         struct sockaddr_in address;
         int opt;
         int addrlen;
+        int nb_bytes;
         char buffer[1024];
     public:
 
+        char *getBuffer();
+
         // Utilities
-        void sendHelloWorld();
+        void recvNSave();
 
         // Constructors
         SocketHandler();

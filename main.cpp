@@ -20,7 +20,8 @@ int main() {
     DbCommunicator dbCommunicator = DbCommunicator(theDb);
     while(true){
         SocketHandler socketHandler = SocketHandler();
-        socketHandler.sendHelloWorld();
+        socketHandler.recvNSave();
+        std::cout << socketHandler.getBuffer() << "\n";
     }
     
     /*

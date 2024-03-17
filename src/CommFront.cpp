@@ -11,13 +11,16 @@
 
 // Utilities
 
-void SocketHandler::sendHelloWorld(){
-   // Envoyer un message de réponse au client
-  send(new_socket, "Hello, world!", 13, 0);
+void SocketHandler::recvNSave(){
+  // Envoyer un message de réponse au client
+  // send(new_socket, "Hello, world!", 13, 0);
+  this->nb_bytes = recv(new_socket, buffer, sizeof(buffer), 0);
+  this->buffer[nb_bytes] = '\0';
+  //std::cout << "Buffy : " << buffer << "\n";
 }
 
 
-
+char *SocketHandler::getBuffer(){ return this->buffer; };
 
 // Constructor
 SocketHandler::SocketHandler() {
