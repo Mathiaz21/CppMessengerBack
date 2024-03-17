@@ -12,16 +12,15 @@
 class SocketHandler {
     
     private:
-        int main_socket, front_socket;
-        struct sockaddr_in server_address;
-        int bytes_in_buffer;
+        int server_fd, new_socket;
+        struct sockaddr_in address;
+        int opt;
+        int addrlen;
         char buffer[1024];
-
     public:
 
-        void recvNPrint();
-        void initialiseClientSocket();
-        void closeFrontSocket();
+        // Utilities
+        void sendHelloWorld();
 
         // Constructors
         SocketHandler();

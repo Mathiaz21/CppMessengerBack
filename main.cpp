@@ -18,10 +18,10 @@ int main() {
     mongocxx::database theDb = client["Messengerdb"];
 
     DbCommunicator dbCommunicator = DbCommunicator(theDb);
-    SocketHandler socketHandler = SocketHandler();
-    socketHandler.initialiseClientSocket();
-    socketHandler.recvNPrint();
-
+    while(true){
+        SocketHandler socketHandler = SocketHandler();
+        socketHandler.sendHelloWorld();
+    }
     
     /*
     int longueurConv = dbCommunicator.queryConversationLength(1,2);
