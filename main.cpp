@@ -18,9 +18,9 @@ int main() {
     mongocxx::database theDb = client["Messengerdb"];
 
     DbCommunicator dbCommunicator = DbCommunicator(theDb);
-    SocketHandler frontCommunicator = SocketHandler();
-
-    frontCommunicator.sendHelloWorld();
+    SocketHandler socketHandler = SocketHandler();
+    socketHandler.initialiseClientSocket();
+    socketHandler.recvNPrint();
 
     
     /*
