@@ -8,6 +8,8 @@
 #include <arpa/inet.h>
 #include <string.h>
 
+#include "Datatypes.hpp"
+
 
 class SocketHandler {
     
@@ -25,7 +27,15 @@ class SocketHandler {
 
         // Utilities
         void recvNSave();
+        std::time_t stringToTime(const std::string& dateTimeStr);
+        void translateFromBuffer(const std::string& encodedMessage, Message *message);
 
+
+        // Getters
+        int getSocketUserId();
+
+        // Setters
+        void setUserId(int theUserId);
         // Constructors
         SocketHandler();
 

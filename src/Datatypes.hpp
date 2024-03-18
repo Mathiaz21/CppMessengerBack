@@ -50,9 +50,6 @@ class Message {
 
         // Utilities
         void copyMessage(Message newMessage);
-        std::time_t stringToTime(const std::string& dateTimeStr);
-        void translateFromBuffer(const std::string& encodedMessage);
-
 
         // Constructors
         Message();

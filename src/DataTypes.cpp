@@ -56,64 +56,6 @@ void Message::copyMessage(Message newMessage) {
     this->setReaction( newMessage.getReaction() );
 }
 
-std::time_t Message::stringToTime(const std::string& dateTimeStr) {
-    std::tm time = {};
-    std::stringstream ss(dateTimeStr);
-    char delimiter;
-    ss >> time.tm_mday >> delimiter >> time.tm_mon >> delimiter >> time.tm_year >> delimiter;
-    int secondsOfDay;
-    ss >> secondsOfDay;
-    time.tm_year -= 1900;
-    time.tm_mon -= 1;
-    time.tm_sec = secondsOfDay % 60;
-    secondsOfDay /= 60;
-    time.tm_min = secondsOfDay % 60;
-    time.tm_hour = secondsOfDay / 60;
-    return std::mktime(&time);
-}
-
-void Message::translateFromBuffer(const std::string& encodedMessage) {
-    size_t pos = encodedMessage.find("I:{");
-    if (pos == std::string::npos)
-        return; 
-    size_t posEnd = encodedMessage.find("},", pos);
-    if (posEnd == std::string::npos)
-        return; 
-    std::string messageIdStr = encodedMessage.substr(pos + 3, posEnd - pos - 3);
-    setMessageId(std::stoi(messageIdStr));
-    pos = encodedMessage.find("A:{");
-    if (pos == std::string::npos)
-        return;
-    posEnd = encodedMessage.find("},", pos);
-    if (posEnd == std::string::npos)
-        return;
-    std::string idAuteurStr = encodedMessage.substr(pos + 3, posEnd - pos - 3);
-    setIdAuteur(std::stoi(idAuteurStr));
-    pos = encodedMessage.find("D:{");
-    if (pos == std::string::npos)
-        return;
-    posEnd = encodedMessage.find("},", pos);
-    if (posEnd == std::string::npos)
-        return;
-    std::string idDestinataireStr = encodedMessage.substr(pos + 3, posEnd - pos - 3);
-    setIdDestinataire(std::stoi(idDestinataireStr));
-    pos = encodedMessage.find("S:{");
-    if (pos == std::string::npos)
-        return;
-    posEnd = encodedMessage.find("},", pos);
-    if (posEnd == std::string::npos)
-        return;
-    std::string heureEnvoiStr = encodedMessage.substr(pos + 3, posEnd - pos - 3);
-    setHeureEnvoi(stringToTime(heureEnvoiStr));
-    pos = encodedMessage.find("C:{");
-    if (pos == std::string::npos)
-        return;
-    posEnd = encodedMessage.find("}}", pos);
-    if (posEnd == std::string::npos)
-        return;
-    std::string contenuStr = encodedMessage.substr(pos + 3, posEnd - pos - 3);
-    setContenu(contenuStr);
-}
 
 // Constructors
 Message::Message() {};

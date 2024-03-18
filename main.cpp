@@ -20,13 +20,15 @@ int main() {
     DbCommunicator dbCommunicator = DbCommunicator(theDb);
     // std::string encodedMessage = "{I:{1},A:{1},D:{2},S:{17/03/2024/80000},C:{Bonjour Mme Pavoshko moi je fais des hiyts Mme Pavoshko}}";
     Message message;
-    while(true){
-        SocketHandler socketHandler = SocketHandler();
-        socketHandler.recvNSave();
-        std::string encodedMessage = socketHandler.getBuffer();
-        message.translateFromBuffer(encodedMessage);
-        message.printMessage();
-    }
+
+    SocketHandler socketHandler = SocketHandler();
+    socketHandler.recvNSave();
+    std::cout << socketHandler.getBuffer() << "\n";
+    std::string encodedMessage = socketHandler.getBuffer();
+    socketHandler.translateFromBuffer(encodedMessage, &message);
+    message.printMessage();
+    dbCommunicator.addMessage(message);
+
     
     
 

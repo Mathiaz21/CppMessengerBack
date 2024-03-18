@@ -9,6 +9,8 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 
+
+
 // Utilities
 
 void SocketHandler::recvNSave(){
@@ -19,8 +21,76 @@ void SocketHandler::recvNSave(){
   //std::cout << "Buffy : " << buffer << "\n";
 }
 
+std::time_t SocketHandler::stringToTime(const std::string& dateTimeStr) {
+    std::tm time = {};
+    std::stringstream ss(dateTimeStr);
+    char delimiter;
+    ss >> time.tm_mday >> delimiter >> time.tm_mon >> delimiter >> time.tm_year >> delimiter;
+    int secondsOfDay;
+    ss >> secondsOfDay;
+    time.tm_year -= 1900;
+    time.tm_mon -= 1;
+    time.tm_sec = secondsOfDay % 60;
+    secondsOfDay /= 60;
+    time.tm_min = secondsOfDay % 60;
+    time.tm_hour = secondsOfDay / 60;
+    return std::mktime(&time);
+}
 
+void SocketHandler::translateFromBuffer(const std::string& encodedMessage, Message *message) {
+    size_t pos = encodedMessage.find("I:{");
+    if (pos == std::string::npos)
+        return; 
+    size_t posEnd = encodedMessage.find("},", pos);
+    if (posEnd == std::string::npos)
+        return; 
+    std::string messageIdStr = encodedMessage.substr(pos + 3, posEnd - pos - 3);
+    message->setMessageId(std::stoi(messageIdStr));
+    pos = encodedMessage.find("A:{");
+    if (pos == std::string::npos)
+        return;
+    posEnd = encodedMessage.find("},", pos);
+    if (posEnd == std::string::npos)
+        return;
+    std::string idAuteurStr = encodedMessage.substr(pos + 3, posEnd - pos - 3);
+    message->setIdAuteur(std::stoi(idAuteurStr));
+    // this->setUserId(std::stoi(idAuteurStr));
+    pos = encodedMessage.find("D:{");
+    if (pos == std::string::npos)
+        return;
+    posEnd = encodedMessage.find("},", pos);
+    if (posEnd == std::string::npos)
+        return;
+    std::string idDestinataireStr = encodedMessage.substr(pos + 3, posEnd - pos - 3);
+    message->setIdDestinataire(std::stoi(idDestinataireStr));
+    pos = encodedMessage.find("S:{");
+    if (pos == std::string::npos)
+        return;
+    posEnd = encodedMessage.find("},", pos);
+    if (posEnd == std::string::npos)
+        return;
+    std::string heureEnvoiStr = encodedMessage.substr(pos + 3, posEnd - pos - 3);
+    message->setHeureEnvoi(stringToTime(heureEnvoiStr));
+    pos = encodedMessage.find("C:{");
+    if (pos == std::string::npos)
+        return;
+    posEnd = encodedMessage.find("}}", pos);
+    if (posEnd == std::string::npos)
+        return;
+    std::string contenuStr = encodedMessage.substr(pos + 3, posEnd - pos - 3);
+    message->setContenu(contenuStr);
+
+
+}
+
+
+// Getters
 char *SocketHandler::getBuffer(){ return this->buffer; };
+int SocketHandler::getSocketUserId(){ return this->socketUserId; };
+
+
+// Setterss
+void SocketHandler::setUserId(int theUserId){ this->socketUserId = theUserId; };
 
 // Constructor
 SocketHandler::SocketHandler() {
