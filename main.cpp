@@ -18,12 +18,18 @@ int main() {
     mongocxx::database theDb = client["Messengerdb"];
 
     DbCommunicator dbCommunicator = DbCommunicator(theDb);
+    std::string encodedMessage = "{I:{1},A:{1},D:{2},S:{17/03/2024/80000},C:{Bonjour Mme Pavoshko moi je fais des hiyts Mme Pavoshko}}";
+    Message message;
+    message.translateFromBuffer(encodedMessage);
+    message.printMessage();
+    /*
     while(true){
         SocketHandler socketHandler = SocketHandler();
         socketHandler.recvNSave();
         std::cout << socketHandler.getBuffer() << "\n";
     }
-    
+    */
+
     /*
     int longueurConv = dbCommunicator.queryConversationLength(1,2);
     Message messageList[longueurConv];

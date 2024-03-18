@@ -56,116 +56,68 @@ void Message::copyMessage(Message newMessage) {
     this->setReaction( newMessage.getReaction() );
 }
 
-int assertChar(char character, char *buffer, int cursor) {
-    if(buffer[cursor] == character) {
-        return 0;
-    }
-    std::cerr << "Error, waiting for " << character
-    << " but got " << buffer[cursor] << "\n";
-    return 1;
+std::time_t Message::stringToTime(const std::string& dateTimeStr) {
+    std::tm time = {};
+    std::stringstream ss(dateTimeStr);
+    char delimiter;
+    ss >> time.tm_mday >> delimiter >> time.tm_mon >> delimiter >> time.tm_year >> delimiter;
+    int secondsOfDay;
+    ss >> secondsOfDay;
+    time.tm_year -= 1900;
+    time.tm_mon -= 1;
+    time.tm_sec = secondsOfDay % 60;
+    secondsOfDay /= 60;
+    time.tm_min = secondsOfDay % 60;
+    time.tm_hour = secondsOfDay / 60;
+    return std::mktime(&time);
 }
 
-int Message::unpackInt(char *buffer, int *cursor, char flag){
-    if( assertChar( flag, buffer, *cursor) == 1){
-        return 1;
-    }
-    *cursor++;
-    if( assertChar( ':', buffer, *cursor) == 1){
-        return 1;
-    }
-    *cursor++;
-    char receptor[128];
-    int count = 0;
-    while(buffer[*cursor] != '}') {
-        receptor[count] = buffer[*cursor];
-        *cursor++;
-        count++;
-    }
-    receptor[count] = '\0';
-    *cursor++;
-    int result = std::stoi(buffer);
-    return result;
-}
+void Message::translateFromBuffer(const std::string& encodedMessage) {
+    size_t pos = encodedMessage.find("I:{");
+    if (pos == std::string::npos)
+        return; 
 
-std::string unpackString(char *buffer, int *cursor, char flag) {
-    if( assertChar( flag, buffer, *cursor) == 1){
+    size_t posEnd = encodedMessage.find("},", pos);
+    if (posEnd == std::string::npos)
+        return; 
+    std::string messageIdStr = encodedMessage.substr(pos + 3, posEnd - pos - 3);
+    setMessageId(std::stoi(messageIdStr));
+
+    pos = encodedMessage.find("A:{");
+    if (pos == std::string::npos)
         return;
-    }
-    *cursor++;
-    if( assertChar( ':', buffer, *cursor) == 1){
+    posEnd = encodedMessage.find("},", pos);
+    if (posEnd == std::string::npos)
         return;
-    }
-    *cursor++;
-    char receptor[128];
-    int count = 0;
-    while(buffer[*cursor] != '}') {
-        receptor[count] = buffer[*cursor];
-        *cursor++;
-        count++;
-    }
-    receptor[count] = '\0';
-    *cursor++;
-    std::string result = receptor;
-    return result;
-}
+    std::string idAuteurStr = encodedMessage.substr(pos + 3, posEnd - pos - 3);
+    setIdAuteur(std::stoi(idAuteurStr));
 
-std::time_t unpackTime(char *buffer, int *cursor) {
-    char* start = std::strstr(buffer + *cursor, "S:{");
-    if (start == nullptr) {
-        std::cerr << "Format de données invalide : S:{ introuvable." << std::endl;
-        return -1; // Valeur de temps invalide pour indiquer une erreur
-    }
-    *cursor = start - buffer + 3; 
-    int day, month, year, seconds;
-    if (std::sscanf(buffer + *cursor, "%d/%d/%d/%d}", &day, &month, &year, &seconds) != 4) {
-        std::cerr << "Format de données invalide : Impossible de lire la date et l'heure." << std::endl;
-        return -1; // Valeur de temps invalide pour indiquer une erreur
-    }
-    *cursor += std::strlen("jj/mm/aaaa/sssss}") + 1; // +1 pour passer le '}'
+    pos = encodedMessage.find("D:{");
+    if (pos == std::string::npos)
+        return;
+    posEnd = encodedMessage.find("},", pos);
+    if (posEnd == std::string::npos)
+        return;
+    std::string idDestinataireStr = encodedMessage.substr(pos + 3, posEnd - pos - 3);
+    setIdDestinataire(std::stoi(idDestinataireStr));
 
-    // Construction de la structure tm pour la conversion en std::time_t
-    std::tm timeinfo = {};
-    timeinfo.tm_sec = seconds % 60;
-    timeinfo.tm_min = seconds / 60 % 60;
-    timeinfo.tm_hour = seconds / 3600;
-    timeinfo.tm_mday = day;
-    timeinfo.tm_mon = month - 1; // Les mois commencent à 0 dans struct tm
-    timeinfo.tm_year = year - 1900; // Année moins 1900 dans struct tm
-    timeinfo.tm_isdst = -1; // Indéterminé
-    // Conversion de la structure tm en std::time_t
-    std::time_t time = std::mktime(&timeinfo);
-    if (time == -1) {
-        std::cerr << "Erreur lors de la conversion de la date et de l'heure en std::time_t." << std::endl;
-        return -1; // Valeur de temps invalide pour indiquer une erreur
-    }
+    pos = encodedMessage.find("S:{");
+    if (pos == std::string::npos)
+        return;
+    posEnd = encodedMessage.find("},", pos);
+    if (posEnd == std::string::npos)
+        return;
+    std::string heureEnvoiStr = encodedMessage.substr(pos + 3, posEnd - pos - 3);
+    setHeureEnvoi(stringToTime(heureEnvoiStr));
 
-    return time;
-}
-
-int Message::translateFromBuffer(char *buffer, int bufferLength) {
-    int cursor = 0;
-    if( assertChar('{', buffer, cursor) == 1) {
-        return -1;
-    };
-    cursor++;
-    this->setMessageId(unpackInt(buffer, &cursor, 'I'));
-    if( assertChar(',', buffer, cursor) == 1) {
-        return -1;
-    };
-    cursor++;
-    this->setIdAuteur( unpackInt(buffer, &cursor, 'A'));
-    if( assertChar(',', buffer, cursor) == 1) {
-        return -1;
-    };
-    cursor++;
-    this->setIdAuteur( unpackInt(buffer, &cursor, 'D'));
-    if( assertChar(',', buffer, cursor) == 1) {
-        return -1;
-    };
-    cursor++;
-    this->setHeureEnvoi( unpackTime(buffer, &cursor));
-    cursor++;
-    this->setContenu( unpackString(buffer, &cursor, 'C'));
+    pos = encodedMessage.find("C:{");
+    if (pos == std::string::npos)
+        return;
+    posEnd = encodedMessage.find("}}", pos);
+    if (posEnd == std::string::npos)
+        return;
+    std::string contenuStr = encodedMessage.substr(pos + 3, posEnd - pos - 3);
+    setContenu(contenuStr);
 }
 
 // Constructors

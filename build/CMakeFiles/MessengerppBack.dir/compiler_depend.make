@@ -371,6 +371,18 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
   /usr/local/include/mongocxx/v_noabi/mongocxx/uri.hpp \
   /usr/local/include/mongocxx/v_noabi/mongocxx/instance.hpp \
   ../src/Datatypes.hpp \
+  /usr/include/c++/11/iomanip \
+  /usr/include/c++/11/locale \
+  /usr/include/c++/11/bits/locale_facets_nonio.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h \
+  /usr/include/libintl.h \
+  /usr/include/c++/11/bits/codecvt.h \
+  /usr/include/c++/11/bits/locale_facets_nonio.tcc \
+  /usr/include/c++/11/bits/locale_conv.h \
+  /usr/include/c++/11/bits/quoted_string.h \
+  /usr/include/c++/11/sstream \
+  /usr/include/c++/11/bits/sstream.tcc \
   ../src/CommFront.hpp \
   /usr/include/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
@@ -431,6 +443,20 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 /usr/include/x86_64-linux-gnu/bits/posix_opt.h:
 
 ../src/CommFront.hpp:
+
+/usr/include/c++/11/bits/quoted_string.h:
+
+/usr/include/c++/11/bits/locale_conv.h:
+
+/usr/include/c++/11/bits/locale_facets_nonio.tcc:
+
+/usr/include/libintl.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h:
+
+/usr/include/c++/11/bits/locale_facets_nonio.h:
 
 ../src/Datatypes.hpp:
 
@@ -517,6 +543,8 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 /usr/local/include/mongocxx/v_noabi/mongocxx/hint.hpp:
 
 /usr/local/include/mongocxx/v_noabi/mongocxx/model/delete_many.hpp:
+
+/usr/include/c++/11/sstream:
 
 /usr/local/include/mongocxx/v_noabi/mongocxx/model/write.hpp:
 
@@ -658,7 +686,11 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/stl_iterator.h:
 
+/usr/include/c++/11/bits/sstream.tcc:
+
 /usr/include/c++/11/new:
+
+/usr/include/c++/11/locale:
 
 /usr/local/include/bsoncxx/v_noabi/bsoncxx/types/bson_value/view.hpp:
 
@@ -695,6 +727,8 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/11/iostream:
 
 /usr/include/c++/11/bits/node_handle.h:
+
+/usr/include/c++/11/iomanip:
 
 /usr/include/c++/11/cctype:
 
@@ -1167,6 +1201,8 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/11/bits/hashtable.h:
 
 /usr/include/c++/11/bits/hashtable_policy.h:
+
+/usr/include/c++/11/bits/codecvt.h:
 
 /usr/include/c++/11/bits/basic_ios.tcc:
 

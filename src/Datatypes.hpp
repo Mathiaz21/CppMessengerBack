@@ -2,6 +2,7 @@
 #include <ctime>
 #include <iostream>
 #include <cstring>
+#include <iomanip>
 
 #ifndef DATA_TYPES_HPP
 #define DATA_TYPES_HPP
@@ -49,10 +50,8 @@ class Message {
 
         // Utilities
         void copyMessage(Message newMessage);
-        int unpackInt(char *buffer, int *cursor, char flag);
-        std::string unpackString(char *buffer, int *cursor, char flag);
-        std::time_t unpackTime(char *buffer, int *cursor);
-        int translateFromBuffer(char *buffer, int bufferlength);
+        std::time_t stringToTime(const std::string& dateTimeStr);
+        void translateFromBuffer(const std::string& encodedMessage);
 
 
         // Constructors

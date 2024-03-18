@@ -64,7 +64,7 @@ void DbCommunicator::deleteConversation(int theUserId1, int theUserId2) {
     Message messageList[convLength];
     queryConversation(messageList, convLength, theUserId1, theUserId2);
     for(Message message: messageList){
-        std::string messageId = message.getIdMessage();
+        std::string messageId = message.getMongoId();
         deleteMessageById(messageId);
     }
 }
@@ -121,7 +121,7 @@ void DbCommunicator::setMessageFromView(Message *message, bsoncxx::v_noabi::docu
     int theReceiverId = view["idDestinataire"].get_int32().value;
     std::string theContent = view["contenu"].get_string().value.to_string();
 
-    message->setIdMessage( theMessageId );
+    message->setMongoId( theMessageId );
     message->setIdAuteur( theSenderId );
     message->setIdDestinataire( theReceiverId );
     message->setContenu( theContent );
