@@ -76,13 +76,11 @@ void Message::translateFromBuffer(const std::string& encodedMessage) {
     size_t pos = encodedMessage.find("I:{");
     if (pos == std::string::npos)
         return; 
-
     size_t posEnd = encodedMessage.find("},", pos);
     if (posEnd == std::string::npos)
         return; 
     std::string messageIdStr = encodedMessage.substr(pos + 3, posEnd - pos - 3);
     setMessageId(std::stoi(messageIdStr));
-
     pos = encodedMessage.find("A:{");
     if (pos == std::string::npos)
         return;
@@ -91,7 +89,6 @@ void Message::translateFromBuffer(const std::string& encodedMessage) {
         return;
     std::string idAuteurStr = encodedMessage.substr(pos + 3, posEnd - pos - 3);
     setIdAuteur(std::stoi(idAuteurStr));
-
     pos = encodedMessage.find("D:{");
     if (pos == std::string::npos)
         return;
@@ -100,7 +97,6 @@ void Message::translateFromBuffer(const std::string& encodedMessage) {
         return;
     std::string idDestinataireStr = encodedMessage.substr(pos + 3, posEnd - pos - 3);
     setIdDestinataire(std::stoi(idDestinataireStr));
-
     pos = encodedMessage.find("S:{");
     if (pos == std::string::npos)
         return;
@@ -109,7 +105,6 @@ void Message::translateFromBuffer(const std::string& encodedMessage) {
         return;
     std::string heureEnvoiStr = encodedMessage.substr(pos + 3, posEnd - pos - 3);
     setHeureEnvoi(stringToTime(heureEnvoiStr));
-
     pos = encodedMessage.find("C:{");
     if (pos == std::string::npos)
         return;

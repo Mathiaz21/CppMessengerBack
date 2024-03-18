@@ -18,6 +18,7 @@ class SocketHandler {
         int addrlen;
         int nb_bytes;
         char buffer[1024];
+        int socketUserId;
     public:
 
         char *getBuffer();
