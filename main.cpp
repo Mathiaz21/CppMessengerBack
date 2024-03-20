@@ -18,7 +18,7 @@ int main() {
     mongocxx::database theDb = client["Messengerdb"];
 
     DbCommunicator dbCommunicator = DbCommunicator(theDb);
-    // std::string encodedMessage = "{I:{1},A:{1},D:{2},S:{17/03/2024/80000},C:{Bonjour Mme Pavoshko moi je fais des hiyts Mme Pavoshko}}";
+    // std::string encodedMessage = "{I:{1},A:{1},D:{2},S:{17/03/2024/80000},C:{Bonjour Mme Pavoshko moi je fais des hits Mme Pavoshko}}";
     Message message;
 
     // dbCommunicator.deleteConversation(0,-1);

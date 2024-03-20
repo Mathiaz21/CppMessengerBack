@@ -29,43 +29,27 @@ void SocketHandler::routeRequest(DbCommunicator dbCommunicator) {
   // Demande d'envoi des données
   if(buffer[0] == '('){
     std::cout << "Envoi : " << buffer << "\n";
-    int userId1 = buffer[1] - '0';
-    int userId2 = buffer[3] - '0';
+    int cursor = 1;
+
+    // Lecture de la première valeur
+    int userId1 = 0;
+    while(buffer[cursor] != ',') {
+      userId1 *= 10;
+      userId1 += buffer[cursor] - '0';
+      cursor++;
+    }
+    cursor++;
+
+    // Lecture de la seconde valeur
+    int userId2 = 0;
+    while(buffer[cursor] != ')') {
+      userId2 *= 10;
+      userId1 += buffer[cursor] - '0';
+      cursor++;
+    }
     sendConversation(userId1, userId2, dbCommunicator);
   }
 }
-
-
-
-
-std::time_t SocketHandler::stringToTime(const std::string& dateTimeStr) {
-    std::tm time = {};
-    std::stringstream ss(dateTimeStr);
-    char delimiter;
-    ss >> time.tm_mday >> delimiter >> time.tm_mon >> delimiter >> time.tm_year >> delimiter;
-    int secondsOfDay;
-    ss >> secondsOfDay;
-    time.tm_year -= 1900;
-    time.tm_mon -= 1;
-    time.tm_sec = secondsOfDay % 60;
-    secondsOfDay /= 60;
-    time.tm_min = secondsOfDay % 60;
-    time.tm_hour = secondsOfDay / 60;
-    return std::mktime(&time);
-}
-
-std::string SocketHandler::timeToString(std::time_t *time) {
-  std::string timeStr;
-  std::tm *timeInfo = std::localtime(time);
-  timeStr += std::to_string(timeInfo->tm_mday) += "/";
-  timeStr += std::to_string(timeInfo->tm_mon) += "/";
-  timeStr += std::to_string(timeInfo->tm_year) += "/";
-
-  int nbSeconds = timeInfo->tm_sec + 60*( timeInfo->tm_min + 60*( timeInfo->tm_hour ) );
-  timeStr += std::to_string(nbSeconds);
-  return timeStr;
-}
-
 
 void SocketHandler::translateFromBuffer(const std::string& encodedMessage, Message *message) {
     size_t pos = encodedMessage.find("I:{");
@@ -100,7 +84,7 @@ void SocketHandler::translateFromBuffer(const std::string& encodedMessage, Messa
     if (posEnd == std::string::npos)
         return;
     std::string heureEnvoiStr = encodedMessage.substr(pos + 3, posEnd - pos - 3);
-    message->setHeureEnvoi(stringToTime(heureEnvoiStr));
+    message->setHeureEnvoi(message->stringToTime(heureEnvoiStr));
     pos = encodedMessage.find("C:{");
     if (pos == std::string::npos)
         return;
@@ -119,7 +103,7 @@ void SocketHandler::translateToBuffer(char *buffer, int *bufferLen, Message *mes
   messageStr += "A:{" + std::to_string(message->getIdAuteur()) + "},";
   messageStr += "D:{" + std::to_string(message->getIdDestinataire()) + "},";
   std::time_t heureEnvoi = message->getHeureEnvoi();
-  messageStr += "S:{" + timeToString(&heureEnvoi);
+  messageStr += "S:{" + message->timeToString(&heureEnvoi);
   messageStr += "C:{" + message->getContenu() + "}}\0";
   // Écriture des réponses dans les buffers
   *bufferLen = messageStr.length();

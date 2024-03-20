@@ -13,10 +13,7 @@ int Message::getMessageId() {return this->messageId; };
 int Message::getIdAuteur() { return this->idAuteur; };
 int Message::getIdDestinataire() { return this->idDestinataire; };
 std::string Message::getContenu() { return this->contenu; };
-int Message::getReaction() { return this->reaction; };
 std::time_t Message::getHeureEnvoi() { return this->heureEnvoi; };
-std::time_t Message::getHeureReception() { return this->heureReception; };
-std::time_t Message::getHeureLecture() { return this->heureLecture; };
 
 
 // Setters
@@ -25,10 +22,7 @@ void Message::setMessageId(int newId) { this->messageId = newId; };
 void Message::setIdAuteur(int newId) { this->idAuteur = newId; };
 void Message::setIdDestinataire(int newId) { this->idDestinataire = newId; };
 void Message::setContenu(std::string newContenu) { this->contenu = newContenu; };
-void Message::setReaction(int newReaction) { this->reaction = newReaction; };
 void Message::setHeureEnvoi(std::time_t newHeureEnvoi) { this->heureEnvoi = newHeureEnvoi; };
-void Message::setHeureReception(std::time_t newHeureReception) { this->heureEnvoi = newHeureReception; };
-void Message::setHeureLecture(std::time_t newHeureLecture) { this->heureLecture = newHeureLecture; };
 
 // Debugging
 void Message::printMessage(){
@@ -51,10 +45,36 @@ void Message::copyMessage(Message newMessage) {
     this->setIdDestinataire( newMessage.getIdDestinataire() );
     this->setContenu( newMessage.getContenu() );
     this->setHeureEnvoi( newMessage.getHeureEnvoi() );
-    this->setHeureReception( newMessage.getHeureReception() );
-    this->setHeureLecture( newMessage.getHeureLecture() );
-    this->setReaction( newMessage.getReaction() );
 }
+
+std::time_t Message::stringToTime(const std::string& dateTimeStr) {
+    std::tm time = {};
+    std::stringstream ss(dateTimeStr);
+    char delimiter;
+    ss >> time.tm_mday >> delimiter >> time.tm_mon >> delimiter >> time.tm_year >> delimiter;
+    int secondsOfDay;
+    ss >> secondsOfDay;
+    time.tm_year -= 1900;
+    time.tm_mon -= 1;
+    time.tm_sec = secondsOfDay % 60;
+    secondsOfDay /= 60;
+    time.tm_min = secondsOfDay % 60;
+    time.tm_hour = secondsOfDay / 60;
+    return std::mktime(&time);
+}
+
+std::string Message::timeToString(std::time_t *time) {
+  std::string timeStr;
+  std::tm *timeInfo = std::localtime(time);
+  timeStr += std::to_string(timeInfo->tm_mday) += "/";
+  timeStr += std::to_string(timeInfo->tm_mon) += "/";
+  timeStr += std::to_string(timeInfo->tm_year) += "/";
+
+  int nbSeconds = timeInfo->tm_sec + 60*( timeInfo->tm_min + 60*( timeInfo->tm_hour ) );
+  timeStr += std::to_string(nbSeconds);
+  return timeStr;
+}
+
 
 
 // Constructors

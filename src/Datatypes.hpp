@@ -41,6 +41,8 @@ class Message {
 
         // Utilities
         void copyMessage(Message newMessage);
+        std::time_t stringToTime(const std::string& dateTimeStr);
+        std::string timeToString(std::time_t *time);
 
         // Constructors
         Message();

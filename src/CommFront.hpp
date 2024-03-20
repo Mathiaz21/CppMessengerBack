@@ -12,7 +12,8 @@
 #include "Datatypes.hpp"
 #include "DbCommunication.hpp"
 
-
+#ifndef COMM_FRONT
+#define COMM_FRONT
 class SocketHandler {
     
     private:
@@ -31,8 +32,6 @@ class SocketHandler {
         // Utilities
         void routeRequest(DbCommunicator dbCommunicator);
         void sendConversation(int userd1, int userId2, DbCommunicator dbCommunicator);
-        std::time_t stringToTime(const std::string& dateTimeStr);
-        std::string timeToString(std::time_t *time);
         void translateFromBuffer(const std::string& encodedMessage, Message *message);
         void translateToBuffer(char *buffer, int *bufferLen, Message *message);
 
@@ -49,3 +48,5 @@ class SocketHandler {
         ~SocketHandler();
 
 };
+
+#endif // COMM_FRONT

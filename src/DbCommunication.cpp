@@ -9,9 +9,13 @@ mongocxx::collection DbCommunicator::getMessagesCollection() { return this->mess
 
 // Queries
 void DbCommunicator::addMessage(Message message) {
+    std::time_t heureEnvoi = message.getHeureEnvoi();
+
     this->getMessagesCollection().insert_one(make_document(
+        kvp("idMessage", message.getMessageId()),
         kvp("idAuteur", message.getIdAuteur()),
         kvp("idDestinataire", message.getIdDestinataire()),
+        kvp("heureDenvoi", message.timeToString(&heureEnvoi)),
         kvp("contenu", message.getContenu())
     ));
 }
@@ -116,14 +120,18 @@ void DbCommunicator::queryUserList(User *userList, int nbOfUsers) {
 
 // Utilities
 void DbCommunicator::setMessageFromView(Message *message, bsoncxx::v_noabi::document::view view) {
-    std::string theMessageId = view["_id"].get_oid().value.to_string();
+    std::string theMongoId = view["_id"].get_oid().value.to_string();
+    int theMessageId = view["idMessage"].get_int32().value;
     int theSenderId = view["idAuteur"].get_int32().value;
     int theReceiverId = view["idDestinataire"].get_int32().value;
     std::string theContent = view["contenu"].get_string().value.to_string();
+    std::string heureDenvoi = view["heureDenvoi"].get_string().value.to_string();
 
-    message->setMongoId( theMessageId );
+    message->setMongoId( theMongoId );
+    message->setMessageId( theMessageId );
     message->setIdAuteur( theSenderId );
     message->setIdDestinataire( theReceiverId );
+    message->setHeureEnvoi( message->stringToTime(heureDenvoi) );
     message->setContenu( theContent );
 
 }
