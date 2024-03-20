@@ -22,23 +22,18 @@ int main() {
     Message message;
 
     // dbCommunicator.deleteConversation(0,-1);
-    // while(true) {
+    while(true) {
         SocketHandler socketHandler = SocketHandler();
-    //     while (true)
-    //     {
-    //         socketHandler.recvNSave();
-    //         if(socketHandler.getNbBytes() <= 0){
-    //             std::cout << "Client a fermé la connexion ou une erreur\n";
-    //             break;
-    //         }
-    //         std::cout << socketHandler.getBuffer() << "\n";
-    //         std::string encodedMessage = socketHandler.getBuffer();
-    //         socketHandler.translateFromBuffer(encodedMessage, &message);
-    //         message.printMessage();
-    //         dbCommunicator.addMessage(message);
-    //     }
-    // }
-    socketHandler.sendConversation(1, 4, dbCommunicator);
+        while (true)
+        {
+            socketHandler.routeRequest(dbCommunicator);
+            if(socketHandler.getNbBytes() <= 0){
+                std::cout << "Client a fermé la connexion ou une erreur\n";
+                break;
+            }
+        }
+    }
+    // socketHandler.sendConversation(1, -1, dbCommunicator);
     
     
 
@@ -61,4 +56,4 @@ int main() {
     */
     // dbCommunicator.deleteConversation(1,2);
     return 0;   
-}
+};

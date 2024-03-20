@@ -13,13 +13,28 @@
 
 // Utilities
 
-void SocketHandler::recvNSave(){
-  // Envoyer un message de réponse au client
-  // send(new_socket, "Hello, world!", 13, 0);
+void SocketHandler::routeRequest(DbCommunicator dbCommunicator) {
+  // Reception
   this->nb_bytes = recv(new_socket, buffer, sizeof(buffer), 0);
   this->buffer[nb_bytes] = '\0';
-  //std::cout << "Buffy : " << buffer << "\n";
+
+  // Ajout Message
+  if(buffer[0] == '{') {
+    std::cout << "Reception : " << buffer << "\n";
+    Message message;
+    std::string encodedMessage = this->getBuffer();
+    translateFromBuffer(encodedMessage, &message);
+    dbCommunicator.addMessage(message);
+  }
+  // Demande d'envoi des données
+  if(buffer[0] == '('){
+    std::cout << "Envoi : " << buffer << "\n";
+    int userId1 = buffer[1] - '0';
+    int userId2 = buffer[3] - '0';
+    sendConversation(userId1, userId2, dbCommunicator);
+  }
 }
+
 
 
 
@@ -97,7 +112,7 @@ void SocketHandler::translateFromBuffer(const std::string& encodedMessage, Messa
 }
 
 
-void SocketHandler::translateToBuffer(const char **buffer, int *bufferLen, Message *message) {
+void SocketHandler::translateToBuffer(char *buffer, int *bufferLen, Message *message) {
 
   // Création de la chaine de caractères
   std::string messageStr = "{I:{" + std::to_string(message->getMessageId()) + "},";
@@ -106,11 +121,11 @@ void SocketHandler::translateToBuffer(const char **buffer, int *bufferLen, Messa
   std::time_t heureEnvoi = message->getHeureEnvoi();
   messageStr += "S:{" + timeToString(&heureEnvoi);
   messageStr += "C:{" + message->getContenu() + "}}\0";
-  std::cout << messageStr << "String Maseega\n";
   // Écriture des réponses dans les buffers
   *bufferLen = messageStr.length();
-  *buffer = messageStr.c_str();
-  std::cout << *buffer << " Buffer char*\n";
+  for(int i = 0; i < *bufferLen; i++) {
+    buffer[i] = messageStr[i];
+  }
 }
 
 void SocketHandler::sendConversation(int userId1, int userId2, DbCommunicator dbCommunicator) {
@@ -118,11 +133,10 @@ void SocketHandler::sendConversation(int userId1, int userId2, DbCommunicator db
   Message *conversation = new Message[convLength];
   dbCommunicator.queryConversation(conversation, convLength, userId1, userId2);
   for(int i = 0; i < convLength; i++) {
-    const char *buffer;
+    char buffer[1024];
     int bufferLen;
-    translateToBuffer(&buffer, &bufferLen, conversation+i);
-    std::cout << "Buffer en sortie : " << *buffer << "\n";
-
+    translateToBuffer(buffer, &bufferLen, conversation+i);
+    std::cout << "Buffer : " << buffer <<"\n";
     send(new_socket, buffer, bufferLen, 0);
   }
 }

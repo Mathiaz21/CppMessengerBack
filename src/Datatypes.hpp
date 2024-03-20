@@ -16,10 +16,7 @@ class Message {
         int idAuteur;
         int idDestinataire;
         std::string contenu;
-        int reaction;
         std::time_t heureEnvoi;
-        std::time_t heureReception;
-        std::time_t heureLecture;
 
     public:
         // Getters
@@ -28,10 +25,7 @@ class Message {
         int getIdAuteur();
         int getIdDestinataire();
         std::string getContenu();
-        int getReaction();
         std::time_t getHeureEnvoi();
-        std::time_t getHeureReception();
-        std::time_t getHeureLecture();
         
 
         // Setters
@@ -40,10 +34,7 @@ class Message {
         void setIdAuteur(int newId);
         void setIdDestinataire(int newId);
         void setContenu(std::string newContenu);
-        void setReaction(int newReaction);
         void setHeureEnvoi(std::time_t newHeureEnvoi);
-        void setHeureReception(std::time_t newHeureReception);
-        void setHeureLecture(std::time_t newHeureLecture);
 
         //Debugging
         void printMessage();
