@@ -2,12 +2,29 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <thread>
+#include <mutex>
 
-
-// #include "./src/DbCommunication.hpp"
 #include "./src/CommFront.hpp"
 
 #define DB_ADDRESS "mongodb://localhost:27017"
+
+void boucle_principale(mongocxx::database db, int idThread) {
+    DbCommunicator dbCommunicator = DbCommunicator(db);
+    Message message;
+    while(true) {
+        SocketHandler socketHandler = SocketHandler();
+        std::cout << "Connexions au Thread : " << idThread << "\n";
+        while (true)
+        {
+            socketHandler.routeRequest(dbCommunicator);
+            if(socketHandler.getNbBytes() <= 0){
+                std::cout << "Client a fermé la connexion ou erreur\n";
+                break;
+            }
+        }
+    }
+}
 
 
 int main() {
@@ -17,25 +34,16 @@ int main() {
     mongocxx::client client(uri);
     mongocxx::database theDb = client["Messengerdb"];
 
-    DbCommunicator dbCommunicator = DbCommunicator(theDb);
     // std::string encodedMessage = "{I:{1},A:{1},D:{2},S:{17/03/2024/80000},C:{Bonjour Mme Pavoshko moi je fais des hits Mme Pavoshko}}";
-    Message message;
-
-    // dbCommunicator.deleteConversation(0,-1);
-    while(true) {
-        SocketHandler socketHandler = SocketHandler();
-        while (true)
-        {
-            socketHandler.routeRequest(dbCommunicator);
-            if(socketHandler.getNbBytes() <= 0){
-                std::cout << "Client a fermé la connexion ou une erreur\n";
-                break;
-            }
-        }
-    }
+    std::thread t1([theDb]() {boucle_principale(theDb, 1); });
+    std::thread t2([theDb]() {boucle_principale(theDb, 2); });
+    std::thread t3([theDb]() {boucle_principale(theDb, 3); });
+    std::thread t4([theDb]() {boucle_principale(theDb, 4); });
     // socketHandler.sendConversation(1, -1, dbCommunicator);
-    
-    
+    t1.join();
+	t2.join();
+    t3.join();
+    t4.join();
 
     /*
     int longueurConv = dbCommunicator.queryConversationLength(1,2);
