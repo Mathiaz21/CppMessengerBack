@@ -30,11 +30,11 @@ class SocketHandler {
         int getNbBytes();
 
         // Utilities
-        void routeRequest(DbCommunicator dbCommunicator);
+        void routeRequest(DbCommunicator dbCommunicator, char *sharedBuffer, int *bufferLen, int *threadSwitch, int *idUser);
         void sendConversation(int userd1, int userId2, DbCommunicator dbCommunicator);
         void translateFromBuffer(const std::string& encodedMessage, Message *message);
         void translateToBuffer(char *buffer, int *bufferLen, Message *message);
-
+        void sendBuffer(char *buffer, int bufferLen);
 
         // Getters
         int getSocketUserId();

@@ -13,7 +13,7 @@
 
 // Utilities
 
-void SocketHandler::routeRequest(DbCommunicator dbCommunicator) {
+void SocketHandler::routeRequest(DbCommunicator dbCommunicator, char *sharedBuffer, int *bufferLen, int *threadSwitch, int *idUser) {
   // Reception
   this->nb_bytes = recv(new_socket, buffer, sizeof(buffer), 0);
   this->buffer[nb_bytes] = '\0';
@@ -25,6 +25,15 @@ void SocketHandler::routeRequest(DbCommunicator dbCommunicator) {
     std::string encodedMessage = this->getBuffer();
     translateFromBuffer(encodedMessage, &message);
     dbCommunicator.addMessage(message);
+
+    // Écriture dans le buffer commun et update du bufferswitch pour envoi direct au client destinataire
+    *threadSwitch = message.getIdDestinataire();
+    std::cout << "ThreadSwitch" << *threadSwitch << "\n";
+    *bufferLen = this->getNbBytes();
+    for(int i = 0; i < *bufferLen; i++) {
+      sharedBuffer[i] = this->getBuffer()[i];
+    }
+
   }
   // Demande d'envoi des données
   if(buffer[0] == '('){
@@ -44,10 +53,12 @@ void SocketHandler::routeRequest(DbCommunicator dbCommunicator) {
     int userId2 = 0;
     while(buffer[cursor] != ')') {
       userId2 *= 10;
-      userId1 += buffer[cursor] - '0';
+      userId2 += buffer[cursor] - '0';
       cursor++;
     }
     sendConversation(userId1, userId2, dbCommunicator);
+    *idUser = userId1;
+    std::cout << "Bienvenue utilisateur " << *idUser << "\n";
   }
 }
 
@@ -120,11 +131,16 @@ void SocketHandler::sendConversation(int userId1, int userId2, DbCommunicator db
     char buffer[1024];
     int bufferLen;
     translateToBuffer(buffer, &bufferLen, conversation+i);
-    std::cout << "Buffer : " << buffer <<"\n";
+    std::cout << "Buffer" << buffer <<"\n";
     send(new_socket, buffer, bufferLen, 0);
   }
 }
 
+
+void SocketHandler::sendBuffer(char *buffer, int bufferLen){
+  std::cout << "Buffer : " << buffer <<"\n";
+  send(this->new_socket, buffer, bufferLen, 0);
+}
 
 // Getters
 char *SocketHandler::getBuffer(){ return this->buffer; };

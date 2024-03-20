@@ -3,24 +3,31 @@
 #include <vector>
 #include <string>
 #include <thread>
-#include <mutex>
 
 #include "./src/CommFront.hpp"
 
 #define DB_ADDRESS "mongodb://localhost:27017"
 
-void boucle_principale(mongocxx::database db, int idThread) {
+void boucle_principale(mongocxx::database db, int idThread, int *bufferLen, int *threadSwitch, char *sharedBuffer) {
+    // Allocation temporaire de idUser à Idthread
+    int idUser = idThread;
     DbCommunicator dbCommunicator = DbCommunicator(db);
     Message message;
     while(true) {
         SocketHandler socketHandler = SocketHandler();
-        std::cout << "Connexions au Thread : " << idThread << "\n";
         while (true)
         {
-            socketHandler.routeRequest(dbCommunicator);
+            socketHandler.routeRequest(dbCommunicator, sharedBuffer, bufferLen, threadSwitch, &idUser);
             if(socketHandler.getNbBytes() <= 0){
-                std::cout << "Client a fermé la connexion ou erreur\n";
+                std::cout <<"Client déconnecté\n";
                 break;
+            }
+            // Cas où le thread doit partager un message
+            std::cout << "ThreadSwitch 1 :" << *threadSwitch <<"\n";
+            if(*threadSwitch==idUser){
+                std::cout << "Message à envoyer" << sharedBuffer << "\n";
+                socketHandler.sendBuffer(sharedBuffer, *bufferLen);
+                *threadSwitch = -2; // Retour à la valeur par défaut
             }
         }
     }
@@ -34,11 +41,15 @@ int main() {
     mongocxx::client client(uri);
     mongocxx::database theDb = client["Messengerdb"];
 
+    char *sharedBuffer = new char[1024];
+    int bufferLen;
+    int threadSwitch = -2;
+
     // std::string encodedMessage = "{I:{1},A:{1},D:{2},S:{17/03/2024/80000},C:{Bonjour Mme Pavoshko moi je fais des hits Mme Pavoshko}}";
-    std::thread t1([theDb]() {boucle_principale(theDb, 1); });
-    std::thread t2([theDb]() {boucle_principale(theDb, 2); });
-    std::thread t3([theDb]() {boucle_principale(theDb, 3); });
-    std::thread t4([theDb]() {boucle_principale(theDb, 4); });
+    std::thread t1([theDb, &bufferLen, &threadSwitch, sharedBuffer ]() {boucle_principale(theDb, 1, &bufferLen, &threadSwitch, sharedBuffer ); });
+    std::thread t2([theDb, &bufferLen, &threadSwitch, sharedBuffer ]() {boucle_principale(theDb, 2, &bufferLen, &threadSwitch, sharedBuffer ); });
+    std::thread t3([theDb, &bufferLen, &threadSwitch, sharedBuffer ]() {boucle_principale(theDb, 3, &bufferLen, &threadSwitch, sharedBuffer ); });
+    std::thread t4([theDb, &bufferLen, &threadSwitch, sharedBuffer ]() {boucle_principale(theDb, 4, &bufferLen, &threadSwitch, sharedBuffer ); });
     // socketHandler.sendConversation(1, -1, dbCommunicator);
     t1.join();
 	t2.join();
