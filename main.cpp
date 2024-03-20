@@ -23,9 +23,7 @@ void boucle_principale(mongocxx::database db, int idThread, int *bufferLen, int 
                 break;
             }
             // Cas où le thread doit partager un message
-            std::cout << "ThreadSwitch 1 :" << *threadSwitch <<"\n";
             if(*threadSwitch==idUser){
-                std::cout << "Message à envoyer" << sharedBuffer << "\n";
                 socketHandler.sendBuffer(sharedBuffer, *bufferLen);
                 *threadSwitch = -2; // Retour à la valeur par défaut
             }
