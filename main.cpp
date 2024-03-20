@@ -4,7 +4,7 @@
 #include <string>
 
 
-#include "./src/DbCommunication.hpp"
+// #include "./src/DbCommunication.hpp"
 #include "./src/CommFront.hpp"
 
 #define DB_ADDRESS "mongodb://localhost:27017"
@@ -21,14 +21,24 @@ int main() {
     // std::string encodedMessage = "{I:{1},A:{1},D:{2},S:{17/03/2024/80000},C:{Bonjour Mme Pavoshko moi je fais des hiyts Mme Pavoshko}}";
     Message message;
 
-    SocketHandler socketHandler = SocketHandler();
-    socketHandler.recvNSave();
-    std::cout << socketHandler.getBuffer() << "\n";
-    std::string encodedMessage = socketHandler.getBuffer();
-    socketHandler.translateFromBuffer(encodedMessage, &message);
-    message.printMessage();
-    dbCommunicator.addMessage(message);
-
+    // dbCommunicator.deleteConversation(0,-1);
+    // while(true) {
+        SocketHandler socketHandler = SocketHandler();
+    //     while (true)
+    //     {
+    //         socketHandler.recvNSave();
+    //         if(socketHandler.getNbBytes() <= 0){
+    //             std::cout << "Client a fermé la connexion ou une erreur\n";
+    //             break;
+    //         }
+    //         std::cout << socketHandler.getBuffer() << "\n";
+    //         std::string encodedMessage = socketHandler.getBuffer();
+    //         socketHandler.translateFromBuffer(encodedMessage, &message);
+    //         message.printMessage();
+    //         dbCommunicator.addMessage(message);
+    //     }
+    // }
+    socketHandler.sendConversation(1, 4, dbCommunicator);
     
     
 

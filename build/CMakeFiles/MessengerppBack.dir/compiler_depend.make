@@ -186,6 +186,59 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
+  ../src/CommFront.hpp \
+  /usr/include/unistd.h \
+  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
+  /usr/include/x86_64-linux-gnu/bits/confname.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+  /usr/include/linux/close_range.h \
+  /usr/include/c++/11/cstring \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/c++/11/ctime \
+  /usr/include/x86_64-linux-gnu/sys/socket.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
+  /usr/include/x86_64-linux-gnu/bits/socket.h \
+  /usr/include/x86_64-linux-gnu/bits/socket_type.h \
+  /usr/include/x86_64-linux-gnu/bits/sockaddr.h \
+  /usr/include/x86_64-linux-gnu/asm/socket.h \
+  /usr/include/asm-generic/socket.h \
+  /usr/include/linux/posix_types.h \
+  /usr/include/linux/stddef.h \
+  /usr/include/x86_64-linux-gnu/asm/posix_types.h \
+  /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
+  /usr/include/asm-generic/posix_types.h \
+  /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
+  /usr/include/asm-generic/bitsperlong.h \
+  /usr/include/x86_64-linux-gnu/asm/sockios.h \
+  /usr/include/asm-generic/sockios.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
+  /usr/include/netinet/in.h \
+  /usr/include/x86_64-linux-gnu/bits/in.h \
+  /usr/include/arpa/inet.h \
+  ../src/Datatypes.hpp \
+  /usr/include/c++/11/iomanip \
+  /usr/include/c++/11/locale \
+  /usr/include/c++/11/bits/locale_facets_nonio.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h \
+  /usr/include/libintl.h \
+  /usr/include/c++/11/bits/codecvt.h \
+  /usr/include/c++/11/bits/locale_facets_nonio.tcc \
+  /usr/include/c++/11/bits/locale_conv.h \
+  /usr/include/c++/11/bits/unique_ptr.h \
+  /usr/include/c++/11/utility \
+  /usr/include/c++/11/bits/stl_relops.h \
+  /usr/include/c++/11/tuple \
+  /usr/include/c++/11/array \
+  /usr/include/c++/11/bits/uses_allocator.h \
+  /usr/include/c++/11/bits/invoke.h \
+  /usr/include/c++/11/bits/quoted_string.h \
+  /usr/include/c++/11/sstream \
+  /usr/include/c++/11/bits/sstream.tcc \
   ../src/DbCommunication.hpp \
   /usr/local/include/bsoncxx/v_noabi/bsoncxx/builder/basic/document.hpp \
   /usr/local/include/bsoncxx/v_noabi/bsoncxx/builder/basic/impl.hpp \
@@ -199,13 +252,6 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
   /usr/include/c++/11/bits/stl_raw_storage_iter.h \
   /usr/include/c++/11/bits/align.h \
   /usr/include/c++/11/bit \
-  /usr/include/c++/11/bits/uses_allocator.h \
-  /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/c++/11/utility \
-  /usr/include/c++/11/bits/stl_relops.h \
-  /usr/include/c++/11/tuple \
-  /usr/include/c++/11/array \
-  /usr/include/c++/11/bits/invoke.h \
   /usr/include/c++/11/bits/shared_ptr.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/bits/allocated_ptr.h \
@@ -262,11 +308,7 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
   /usr/local/include/bsoncxx/v_noabi/bsoncxx/types.hpp \
   /usr/include/c++/11/chrono \
   /usr/include/c++/11/ratio \
-  /usr/include/c++/11/ctime \
   /usr/include/c++/11/bits/parse_numbers.h \
-  /usr/include/c++/11/cstring \
-  /usr/include/string.h \
-  /usr/include/strings.h \
   /usr/local/include/bsoncxx/v_noabi/bsoncxx/decimal128.hpp \
   /usr/local/include/bsoncxx/v_noabi/bsoncxx/oid.hpp \
   /usr/local/include/bsoncxx/v_noabi/bsoncxx/enums/type.hpp \
@@ -369,96 +411,8 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
   /usr/local/include/mongocxx/v_noabi/mongocxx/options/tls.hpp \
   /usr/local/include/mongocxx/v_noabi/mongocxx/options/client_encryption.hpp \
   /usr/local/include/mongocxx/v_noabi/mongocxx/uri.hpp \
-  /usr/local/include/mongocxx/v_noabi/mongocxx/instance.hpp \
-  ../src/Datatypes.hpp \
-  /usr/include/c++/11/iomanip \
-  /usr/include/c++/11/locale \
-  /usr/include/c++/11/bits/locale_facets_nonio.h \
-  /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
-  /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h \
-  /usr/include/libintl.h \
-  /usr/include/c++/11/bits/codecvt.h \
-  /usr/include/c++/11/bits/locale_facets_nonio.tcc \
-  /usr/include/c++/11/bits/locale_conv.h \
-  /usr/include/c++/11/bits/quoted_string.h \
-  /usr/include/c++/11/sstream \
-  /usr/include/c++/11/bits/sstream.tcc \
-  ../src/CommFront.hpp \
-  /usr/include/unistd.h \
-  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
-  /usr/include/x86_64-linux-gnu/bits/environments.h \
-  /usr/include/x86_64-linux-gnu/bits/confname.h \
-  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
-  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
-  /usr/include/linux/close_range.h \
-  /usr/include/x86_64-linux-gnu/sys/socket.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
-  /usr/include/x86_64-linux-gnu/bits/socket.h \
-  /usr/include/x86_64-linux-gnu/bits/socket_type.h \
-  /usr/include/x86_64-linux-gnu/bits/sockaddr.h \
-  /usr/include/x86_64-linux-gnu/asm/socket.h \
-  /usr/include/asm-generic/socket.h \
-  /usr/include/linux/posix_types.h \
-  /usr/include/linux/stddef.h \
-  /usr/include/x86_64-linux-gnu/asm/posix_types.h \
-  /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
-  /usr/include/asm-generic/posix_types.h \
-  /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
-  /usr/include/asm-generic/bitsperlong.h \
-  /usr/include/x86_64-linux-gnu/asm/sockios.h \
-  /usr/include/asm-generic/sockios.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
-  /usr/include/netinet/in.h \
-  /usr/include/x86_64-linux-gnu/bits/in.h \
-  /usr/include/arpa/inet.h
+  /usr/local/include/mongocxx/v_noabi/mongocxx/instance.hpp
 
-
-/usr/include/arpa/inet.h:
-
-/usr/include/netinet/in.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h:
-
-/usr/include/asm-generic/sockios.h:
-
-/usr/include/asm-generic/posix_types.h:
-
-/usr/include/x86_64-linux-gnu/asm/posix_types.h:
-
-/usr/include/linux/posix_types.h:
-
-/usr/include/x86_64-linux-gnu/bits/sockaddr.h:
-
-/usr/include/x86_64-linux-gnu/bits/socket_type.h:
-
-/usr/include/x86_64-linux-gnu/bits/socket.h:
-
-/usr/include/linux/close_range.h:
-
-/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
-
-/usr/include/x86_64-linux-gnu/bits/confname.h:
-
-/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
-
-../src/CommFront.hpp:
-
-/usr/include/c++/11/bits/quoted_string.h:
-
-/usr/include/c++/11/bits/locale_conv.h:
-
-/usr/include/c++/11/bits/locale_facets_nonio.tcc:
-
-/usr/include/libintl.h:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h:
-
-/usr/include/c++/11/bits/locale_facets_nonio.h:
-
-../src/Datatypes.hpp:
 
 /usr/local/include/mongocxx/v_noabi/mongocxx/options/auto_encryption.hpp:
 
@@ -544,19 +498,9 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/local/include/mongocxx/v_noabi/mongocxx/model/delete_many.hpp:
 
-/usr/include/c++/11/sstream:
-
-/usr/local/include/mongocxx/v_noabi/mongocxx/model/write.hpp:
-
 /usr/local/include/mongocxx/v_noabi/mongocxx/result/delete.hpp:
 
 /usr/local/include/mongocxx/v_noabi/mongocxx/bulk_write.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
-
-/usr/local/include/mongocxx/v_noabi/mongocxx/result/insert_one.hpp:
-
-/usr/local/include/bsoncxx/v_noabi/bsoncxx/builder/basic/array.hpp:
 
 /usr/local/include/mongocxx/v_noabi/mongocxx/validation_criteria.hpp:
 
@@ -596,15 +540,81 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/local/include/bsoncxx/v_noabi/bsoncxx/decimal128.hpp:
 
-/usr/include/strings.h:
-
 /usr/include/c++/11/bits/parse_numbers.h:
-
-/usr/include/c++/11/ctime:
 
 /usr/include/c++/11/ratio:
 
 /usr/local/include/bsoncxx/v_noabi/bsoncxx/types.hpp:
+
+/usr/local/include/bsoncxx/v_noabi/bsoncxx/stdx/type_traits.hpp:
+
+/usr/local/include/bsoncxx/v_noabi/bsoncxx/document/view.hpp:
+
+/usr/include/c++/11/limits:
+
+/usr/include/c++/11/algorithm:
+
+/usr/local/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/core/string.hpp:
+
+/usr/local/include/bsoncxx/v_noabi/bsoncxx/stdx/string_view.hpp:
+
+/usr/local/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/core/utility.hpp:
+
+/usr/local/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/core/type_traits.hpp:
+
+/usr/include/c++/11/bits/stl_algo.h:
+
+/usr/local/include/mongocxx/v_noabi/mongocxx/events/heartbeat_started_event.hpp:
+
+/usr/include/c++/11/bits/unordered_map.h:
+
+/usr/include/c++/11/bits/hashtable_policy.h:
+
+/usr/include/c++/11/bits/hashtable.h:
+
+/usr/include/c++/11/unordered_map:
+
+/usr/local/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/core/optional.hpp:
+
+/usr/local/include/bsoncxx/v_noabi/bsoncxx/config/version.hpp:
+
+/usr/local/include/mongocxx/v_noabi/mongocxx/options/find_one_and_replace.hpp:
+
+/usr/local/include/bsoncxx/v_noabi/bsoncxx/config/export.hpp:
+
+/usr/local/include/bsoncxx/v_noabi/bsoncxx/config/config.hpp:
+
+/usr/local/include/bsoncxx/v_noabi/bsoncxx/config/prelude.hpp:
+
+/usr/local/include/mongocxx/v_noabi/mongocxx/search_index_model.hpp:
+
+/usr/local/include/bsoncxx/v_noabi/bsoncxx/stdx/optional.hpp:
+
+/usr/local/include/bsoncxx/v_noabi/bsoncxx/document/element.hpp:
+
+/usr/local/include/bsoncxx/v_noabi/bsoncxx/array/element.hpp:
+
+/usr/include/c++/11/bits/stream_iterator.h:
+
+/usr/local/include/bsoncxx/v_noabi/bsoncxx/array/view.hpp:
+
+/usr/include/c++/11/bits/algorithmfwd.h:
+
+/usr/include/c++/11/pstl/execution_defs.h:
+
+/usr/include/c++/11/pstl/glue_memory_defs.h:
+
+/usr/local/include/mongocxx/v_noabi/mongocxx/events/command_succeeded_event.hpp:
+
+/usr/include/c++/11/backward/auto_ptr.h:
+
+/usr/local/include/bsoncxx/v_noabi/bsoncxx/config/postlude.hpp:
+
+/usr/include/c++/11/bits/atomic_lockfree_defines.h:
+
+/usr/include/c++/11/bits/atomic_base.h:
+
+/usr/include/c++/11/bits/shared_ptr_atomic.h:
 
 /usr/include/c++/11/bits/cxxabi_forced.h:
 
@@ -612,11 +622,11 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
-/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
+/usr/local/include/bsoncxx/v_noabi/bsoncxx/builder/core.hpp:
 
-/usr/include/c++/11/backward/binders.h:
+/usr/include/c++/11/bits/node_handle.h:
 
-/usr/include/c++/11/algorithm:
+/usr/include/c++/11/iostream:
 
 /usr/local/include/mongocxx/v_noabi/mongocxx/model/replace_one.hpp:
 
@@ -627,6 +637,8 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 /usr/local/include/mongocxx/v_noabi/mongocxx/result/bulk_write.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+
+/usr/include/strings.h:
 
 /usr/local/include/mongocxx/v_noabi/mongocxx/index_model.hpp:
 
@@ -658,7 +670,11 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/stl_pair.h:
 
+/usr/include/c++/11/bits/locale_facets_nonio.tcc:
+
 /usr/include/pthread.h:
+
+../src/CommFront.hpp:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/gthr-default.h:
 
@@ -668,11 +684,17 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
+/usr/include/libintl.h:
+
 /usr/include/x86_64-linux-gnu/bits/locale.h:
 
 /usr/include/locale.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
+
+/usr/include/c++/11/backward/binders.h:
+
+/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
 
 /usr/local/include/mongocxx/v_noabi/mongocxx/gridfs/downloader.hpp:
 
@@ -690,13 +712,7 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/new:
 
-/usr/include/c++/11/locale:
-
-/usr/local/include/bsoncxx/v_noabi/bsoncxx/types/bson_value/view.hpp:
-
-/usr/include/ctype.h:
-
-/usr/include/c++/11/bits/stream_iterator.h:
+/usr/include/linux/close_range.h:
 
 /usr/include/c++/11/bits/cpp_type_traits.h:
 
@@ -710,59 +726,33 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/ext/type_traits.h:
 
-/usr/include/c++/11/pstl/glue_memory_defs.h:
+/usr/include/asm-generic/posix_types.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
-/usr/include/x86_64-linux-gnu/asm/socket.h:
-
-/usr/include/x86_64-linux-gnu/sys/select.h:
-
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
-
-/usr/local/include/bsoncxx/v_noabi/bsoncxx/builder/core.hpp:
-
-/usr/include/c++/11/iostream:
-
-/usr/include/c++/11/bits/node_handle.h:
 
 /usr/include/c++/11/iomanip:
 
 /usr/include/c++/11/cctype:
 
-/usr/include/c++/11/unordered_map:
+/usr/local/include/bsoncxx/v_noabi/bsoncxx/document/view_or_value.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
 /usr/include/c++/11/bits/stringfwd.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h:
-
-/usr/include/x86_64-linux-gnu/sys/socket.h:
-
-/usr/include/c++/11/bits/stl_function.h:
-
-/usr/include/c++/11/bits/memoryfwd.h:
-
 /usr/include/c++/11/bits/predefined_ops.h:
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
-/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
-
-/usr/include/x86_64-linux-gnu/bits/setjmp.h:
-
-/usr/include/time.h:
-
 /usr/include/c++/11/bits/stl_multimap.h:
 
 ../main.cpp:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
-
-/usr/local/include/bsoncxx/v_noabi/bsoncxx/document/view_or_value.hpp:
 
 /usr/include/c++/11/bits/string_view.tcc:
 
@@ -786,15 +776,13 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/move.h:
 
-/usr/local/include/mongocxx/v_noabi/mongocxx/events/heartbeat_started_event.hpp:
-
-/usr/include/c++/11/bits/unordered_map.h:
-
 /usr/include/c++/11/ext/alloc_traits.h:
 
 /usr/include/x86_64-linux-gnu/bits/sched.h:
 
 /usr/local/include/bsoncxx/v_noabi/bsoncxx/builder/basic/helpers.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/confname.h:
 
 /usr/local/include/mongocxx/v_noabi/mongocxx/uri.hpp:
 
@@ -804,6 +792,8 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
+/usr/include/c++/11/ctime:
+
 /usr/include/c++/11/iosfwd:
 
 /usr/include/c++/11/initializer_list:
@@ -812,9 +802,9 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h:
 
-/usr/include/unistd.h:
-
 /usr/local/include/mongocxx/v_noabi/mongocxx/model/insert_one.hpp:
+
+/usr/include/unistd.h:
 
 /usr/include/c++/11/bits/stl_algobase.h:
 
@@ -828,7 +818,7 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h:
 
-/usr/local/include/bsoncxx/v_noabi/bsoncxx/document/element.hpp:
+/usr/include/x86_64-linux-gnu/bits/sockaddr.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
@@ -850,13 +840,29 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
-/usr/local/include/bsoncxx/v_noabi/bsoncxx/document/view.hpp:
-
 /usr/include/c++/11/debug/assertions.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
 
 /usr/include/c++/11/exception:
+
+/usr/local/include/bsoncxx/v_noabi/bsoncxx/config/compiler.hpp:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
+
+/usr/local/include/mongocxx/v_noabi/mongocxx/result/gridfs/upload.hpp:
+
+/usr/include/c++/11/functional:
+
+/usr/include/linux/errno.h:
+
+/usr/local/include/bsoncxx/v_noabi/bsoncxx/types/bson_value/view.hpp:
+
+/usr/include/ctype.h:
+
+/usr/include/c++/11/locale:
 
 /usr/include/c++/11/debug/debug.h:
 
@@ -880,9 +886,9 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 
-/usr/include/c++/11/ext/numeric_traits.h:
+/usr/include/arpa/inet.h:
 
-/usr/include/c++/11/bits/atomic_base.h:
+/usr/include/c++/11/ext/numeric_traits.h:
 
 /usr/include/features.h:
 
@@ -896,12 +902,6 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/asm-generic/errno-base.h:
 
-/usr/local/include/mongocxx/v_noabi/mongocxx/result/gridfs/upload.hpp:
-
-/usr/include/linux/errno.h:
-
-/usr/include/c++/11/functional:
-
 /usr/include/wchar.h:
 
 /usr/include/c++/11/bits/cxxabi_init_exception.h:
@@ -909,6 +909,12 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 /usr/local/include/mongocxx/v_noabi/mongocxx/events/server_changed_event.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+
+/usr/local/include/mongocxx/v_noabi/mongocxx/options/apm.hpp:
+
+/usr/local/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/core/functional.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
 /usr/include/c++/11/string:
 
@@ -934,13 +940,7 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
-/usr/local/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/core/optional.hpp:
-
-/usr/include/x86_64-linux-gnu/asm/sockios.h:
-
-/usr/include/c++/11/cstring:
-
-/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
+/usr/include/netinet/in.h:
 
 /usr/local/include/mongocxx/v_noabi/mongocxx/instance.hpp:
 
@@ -974,14 +974,6 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/atomic_word.h:
 
-/usr/local/include/bsoncxx/v_noabi/bsoncxx/stdx/type_traits.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/environments.h:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h:
-
-/usr/include/c++/11/bits/exception_defines.h:
-
 /usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
 
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
@@ -996,14 +988,6 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/functexcept.h:
 
-/usr/include/asm-generic/bitsperlong.h:
-
-/usr/local/include/mongocxx/v_noabi/mongocxx/config/postlude.hpp:
-
-/usr/include/c++/11/bits/concept_check.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
-
 /usr/include/c++/11/streambuf:
 
 /usr/local/include/bsoncxx/v_noabi/bsoncxx/builder/basic/kvp.hpp:
@@ -1012,7 +996,19 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/stdlib.h:
 
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/x86_64-linux-gnu/asm/socket.h:
+
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
+
+/usr/include/c++/11/bits/erase_if.h:
+
+/usr/include/c++/11/bits/ptr_traits.h:
+
+/usr/include/stdint.h:
+
+/usr/include/endian.h:
 
 /usr/include/x86_64-linux-gnu/sys/types.h:
 
@@ -1030,11 +1026,13 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/alloca.h:
 
+/usr/include/c++/11/bits/stl_heap.h:
+
+/usr/include/c++/11/bits/std_abs.h:
+
 /usr/include/c++/11/cstdio:
 
 /usr/include/stdio.h:
-
-/usr/local/include/bsoncxx/v_noabi/bsoncxx/config/version.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
 
@@ -1078,16 +1076,6 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/stdexcept:
 
-/usr/local/include/mongocxx/v_noabi/mongocxx/options/find_one_and_delete.hpp:
-
-/usr/include/string.h:
-
-/usr/include/c++/11/bits/streambuf.tcc:
-
-/usr/local/include/bsoncxx/v_noabi/bsoncxx/config/postlude.hpp:
-
-/usr/include/c++/11/bits/atomic_lockfree_defines.h:
-
 /usr/include/c++/11/bits/uniform_int_dist.h:
 
 /usr/include/c++/11/bits/basic_ios.h:
@@ -1100,13 +1088,19 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/streambuf_iterator.h:
 
-/usr/local/include/bsoncxx/v_noabi/bsoncxx/config/prelude.hpp:
-
 /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
 
 /usr/include/c++/11/bits/locale_facets.tcc:
+
+/usr/include/c++/11/bits/enable_special_members.h:
+
+/usr/include/c++/11/bits/codecvt.h:
+
+/usr/include/c++/11/bits/basic_ios.tcc:
+
+/usr/include/asm-generic/sockios.h:
 
 /usr/include/c++/11/istream:
 
@@ -1116,15 +1110,17 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/vector:
 
+/usr/local/include/mongocxx/v_noabi/mongocxx/result/insert_one.hpp:
+
+/usr/local/include/bsoncxx/v_noabi/bsoncxx/builder/basic/array.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+
 /usr/include/c++/11/bits/align.h:
 
 /usr/local/include/mongocxx/v_noabi/mongocxx/events/heartbeat_succeeded_event.hpp:
 
 /usr/include/c++/11/bits/stl_uninitialized.h:
-
-/usr/local/include/mongocxx/v_noabi/mongocxx/events/command_succeeded_event.hpp:
-
-/usr/include/c++/11/backward/auto_ptr.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
@@ -1132,7 +1128,85 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/stl_bvector.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h:
+
 /usr/include/c++/11/bits/vector.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h:
+
+/usr/include/c++/11/bits/exception_defines.h:
+
+/usr/include/x86_64-linux-gnu/bits/environments.h:
+
+/usr/include/x86_64-linux-gnu/bits/setjmp.h:
+
+/usr/include/time.h:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
+
+/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
+
+/usr/include/c++/11/bits/locale_facets_nonio.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
+
+/usr/include/x86_64-linux-gnu/asm/sockios.h:
+
+/usr/include/c++/11/cstring:
+
+/usr/local/include/mongocxx/v_noabi/mongocxx/options/find_one_and_delete.hpp:
+
+/usr/include/c++/11/bits/streambuf.tcc:
+
+/usr/include/string.h:
+
+/usr/include/c++/11/bits/locale_conv.h:
+
+/usr/include/c++/11/bits/stl_function.h:
+
+/usr/include/c++/11/bits/memoryfwd.h:
+
+/usr/include/x86_64-linux-gnu/sys/socket.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h:
+
+/usr/include/x86_64-linux-gnu/bits/socket.h:
+
+/usr/include/x86_64-linux-gnu/bits/socket_type.h:
+
+/usr/include/linux/posix_types.h:
+
+/usr/include/x86_64-linux-gnu/asm/posix_types.h:
+
+/usr/local/include/mongocxx/v_noabi/mongocxx/config/postlude.hpp:
+
+/usr/include/c++/11/bits/concept_check.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+
+/usr/include/asm-generic/bitsperlong.h:
+
+../src/Datatypes.hpp:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h:
+
+/usr/local/include/mongocxx/v_noabi/mongocxx/model/update_one.hpp:
+
+/usr/include/c++/11/bits/stl_relops.h:
+
+/usr/include/c++/11/array:
+
+/usr/include/c++/11/bits/uses_allocator.h:
+
+/usr/include/c++/11/bits/quoted_string.h:
+
+/usr/local/include/mongocxx/v_noabi/mongocxx/model/write.hpp:
+
+/usr/include/c++/11/sstream:
 
 ../src/DbCommunication.hpp:
 
@@ -1148,10 +1222,6 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/local/include/bsoncxx/v_noabi/bsoncxx/array/view_or_value.hpp:
 
-/usr/include/c++/11/bits/std_abs.h:
-
-/usr/include/c++/11/bits/stl_heap.h:
-
 /usr/local/include/bsoncxx/v_noabi/bsoncxx/builder/concatenate.hpp:
 
 /usr/local/include/bsoncxx/v_noabi/bsoncxx/array/value.hpp:
@@ -1162,76 +1232,6 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/11/bits/stl_raw_storage_iter.h:
 
-/usr/include/c++/11/bits/uses_allocator.h:
-
-/usr/local/include/mongocxx/v_noabi/mongocxx/model/update_one.hpp:
-
-/usr/include/c++/11/bits/stl_relops.h:
-
-/usr/include/c++/11/array:
-
 /usr/include/linux/stddef.h:
 
 /usr/include/c++/11/bits/refwrap.h:
-
-/usr/include/c++/11/bits/shared_ptr_atomic.h:
-
-/usr/local/include/bsoncxx/v_noabi/bsoncxx/array/view.hpp:
-
-/usr/include/c++/11/bits/stl_algo.h:
-
-/usr/local/include/bsoncxx/v_noabi/bsoncxx/array/element.hpp:
-
-/usr/local/include/mongocxx/v_noabi/mongocxx/search_index_model.hpp:
-
-/usr/local/include/bsoncxx/v_noabi/bsoncxx/stdx/optional.hpp:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:
-
-/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
-
-/usr/local/include/bsoncxx/v_noabi/bsoncxx/config/compiler.hpp:
-
-/usr/local/include/bsoncxx/v_noabi/bsoncxx/config/config.hpp:
-
-/usr/local/include/mongocxx/v_noabi/mongocxx/options/find_one_and_replace.hpp:
-
-/usr/local/include/bsoncxx/v_noabi/bsoncxx/config/export.hpp:
-
-/usr/include/c++/11/bits/hashtable.h:
-
-/usr/include/c++/11/bits/hashtable_policy.h:
-
-/usr/include/c++/11/bits/codecvt.h:
-
-/usr/include/c++/11/bits/basic_ios.tcc:
-
-/usr/include/c++/11/bits/enable_special_members.h:
-
-/usr/local/include/bsoncxx/v_noabi/bsoncxx/stdx/string_view.hpp:
-
-/usr/include/c++/11/bits/ptr_traits.h:
-
-/usr/include/stdint.h:
-
-/usr/include/endian.h:
-
-/usr/include/c++/11/bits/erase_if.h:
-
-/usr/include/c++/11/pstl/execution_defs.h:
-
-/usr/include/c++/11/bits/algorithmfwd.h:
-
-/usr/local/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/core/type_traits.hpp:
-
-/usr/local/include/mongocxx/v_noabi/mongocxx/options/apm.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
-
-/usr/local/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/core/functional.hpp:
-
-/usr/local/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/core/utility.hpp:
-
-/usr/local/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc/core/string.hpp:
-
-/usr/include/c++/11/limits:

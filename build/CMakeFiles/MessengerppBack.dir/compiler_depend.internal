@@ -187,6 +187,59 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o
  /usr/include/c++/11/bits/stl_vector.h
  /usr/include/c++/11/bits/stl_bvector.h
  /usr/include/c++/11/bits/vector.tcc
+ /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/src/CommFront.hpp
+ /usr/include/unistd.h
+ /usr/include/x86_64-linux-gnu/bits/posix_opt.h
+ /usr/include/x86_64-linux-gnu/bits/environments.h
+ /usr/include/x86_64-linux-gnu/bits/confname.h
+ /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
+ /usr/include/x86_64-linux-gnu/bits/getopt_core.h
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
+ /usr/include/linux/close_range.h
+ /usr/include/c++/11/cstring
+ /usr/include/string.h
+ /usr/include/strings.h
+ /usr/include/c++/11/ctime
+ /usr/include/x86_64-linux-gnu/sys/socket.h
+ /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h
+ /usr/include/x86_64-linux-gnu/bits/socket.h
+ /usr/include/x86_64-linux-gnu/bits/socket_type.h
+ /usr/include/x86_64-linux-gnu/bits/sockaddr.h
+ /usr/include/x86_64-linux-gnu/asm/socket.h
+ /usr/include/asm-generic/socket.h
+ /usr/include/linux/posix_types.h
+ /usr/include/linux/stddef.h
+ /usr/include/x86_64-linux-gnu/asm/posix_types.h
+ /usr/include/x86_64-linux-gnu/asm/posix_types_64.h
+ /usr/include/asm-generic/posix_types.h
+ /usr/include/x86_64-linux-gnu/asm/bitsperlong.h
+ /usr/include/asm-generic/bitsperlong.h
+ /usr/include/x86_64-linux-gnu/asm/sockios.h
+ /usr/include/asm-generic/sockios.h
+ /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h
+ /usr/include/netinet/in.h
+ /usr/include/x86_64-linux-gnu/bits/in.h
+ /usr/include/arpa/inet.h
+ /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/src/Datatypes.hpp
+ /usr/include/c++/11/iomanip
+ /usr/include/c++/11/locale
+ /usr/include/c++/11/bits/locale_facets_nonio.h
+ /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h
+ /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h
+ /usr/include/libintl.h
+ /usr/include/c++/11/bits/codecvt.h
+ /usr/include/c++/11/bits/locale_facets_nonio.tcc
+ /usr/include/c++/11/bits/locale_conv.h
+ /usr/include/c++/11/bits/unique_ptr.h
+ /usr/include/c++/11/utility
+ /usr/include/c++/11/bits/stl_relops.h
+ /usr/include/c++/11/tuple
+ /usr/include/c++/11/array
+ /usr/include/c++/11/bits/uses_allocator.h
+ /usr/include/c++/11/bits/invoke.h
+ /usr/include/c++/11/bits/quoted_string.h
+ /usr/include/c++/11/sstream
+ /usr/include/c++/11/bits/sstream.tcc
  /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/src/DbCommunication.hpp
  /usr/local/include/bsoncxx/v_noabi/bsoncxx/builder/basic/document.hpp
  /usr/local/include/bsoncxx/v_noabi/bsoncxx/builder/basic/impl.hpp
@@ -200,13 +253,6 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o
  /usr/include/c++/11/bits/stl_raw_storage_iter.h
  /usr/include/c++/11/bits/align.h
  /usr/include/c++/11/bit
- /usr/include/c++/11/bits/uses_allocator.h
- /usr/include/c++/11/bits/unique_ptr.h
- /usr/include/c++/11/utility
- /usr/include/c++/11/bits/stl_relops.h
- /usr/include/c++/11/tuple
- /usr/include/c++/11/array
- /usr/include/c++/11/bits/invoke.h
  /usr/include/c++/11/bits/shared_ptr.h
  /usr/include/c++/11/bits/shared_ptr_base.h
  /usr/include/c++/11/bits/allocated_ptr.h
@@ -263,11 +309,7 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o
  /usr/local/include/bsoncxx/v_noabi/bsoncxx/types.hpp
  /usr/include/c++/11/chrono
  /usr/include/c++/11/ratio
- /usr/include/c++/11/ctime
  /usr/include/c++/11/bits/parse_numbers.h
- /usr/include/c++/11/cstring
- /usr/include/string.h
- /usr/include/strings.h
  /usr/local/include/bsoncxx/v_noabi/bsoncxx/decimal128.hpp
  /usr/local/include/bsoncxx/v_noabi/bsoncxx/oid.hpp
  /usr/local/include/bsoncxx/v_noabi/bsoncxx/enums/type.hpp
@@ -371,46 +413,4 @@ CMakeFiles/MessengerppBack.dir/main.cpp.o
  /usr/local/include/mongocxx/v_noabi/mongocxx/options/client_encryption.hpp
  /usr/local/include/mongocxx/v_noabi/mongocxx/uri.hpp
  /usr/local/include/mongocxx/v_noabi/mongocxx/instance.hpp
- /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/src/Datatypes.hpp
- /usr/include/c++/11/iomanip
- /usr/include/c++/11/locale
- /usr/include/c++/11/bits/locale_facets_nonio.h
- /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h
- /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h
- /usr/include/libintl.h
- /usr/include/c++/11/bits/codecvt.h
- /usr/include/c++/11/bits/locale_facets_nonio.tcc
- /usr/include/c++/11/bits/locale_conv.h
- /usr/include/c++/11/bits/quoted_string.h
- /usr/include/c++/11/sstream
- /usr/include/c++/11/bits/sstream.tcc
- /home/mathias/Documents/2a_ensta/in204/CppMessengerBack/src/CommFront.hpp
- /usr/include/unistd.h
- /usr/include/x86_64-linux-gnu/bits/posix_opt.h
- /usr/include/x86_64-linux-gnu/bits/environments.h
- /usr/include/x86_64-linux-gnu/bits/confname.h
- /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
- /usr/include/x86_64-linux-gnu/bits/getopt_core.h
- /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
- /usr/include/linux/close_range.h
- /usr/include/x86_64-linux-gnu/sys/socket.h
- /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h
- /usr/include/x86_64-linux-gnu/bits/socket.h
- /usr/include/x86_64-linux-gnu/bits/socket_type.h
- /usr/include/x86_64-linux-gnu/bits/sockaddr.h
- /usr/include/x86_64-linux-gnu/asm/socket.h
- /usr/include/asm-generic/socket.h
- /usr/include/linux/posix_types.h
- /usr/include/linux/stddef.h
- /usr/include/x86_64-linux-gnu/asm/posix_types.h
- /usr/include/x86_64-linux-gnu/asm/posix_types_64.h
- /usr/include/asm-generic/posix_types.h
- /usr/include/x86_64-linux-gnu/asm/bitsperlong.h
- /usr/include/asm-generic/bitsperlong.h
- /usr/include/x86_64-linux-gnu/asm/sockios.h
- /usr/include/asm-generic/sockios.h
- /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h
- /usr/include/netinet/in.h
- /usr/include/x86_64-linux-gnu/bits/in.h
- /usr/include/arpa/inet.h
 

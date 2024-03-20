@@ -21,6 +21,8 @@ void SocketHandler::recvNSave(){
   //std::cout << "Buffy : " << buffer << "\n";
 }
 
+
+
 std::time_t SocketHandler::stringToTime(const std::string& dateTimeStr) {
     std::tm time = {};
     std::stringstream ss(dateTimeStr);
@@ -36,6 +38,19 @@ std::time_t SocketHandler::stringToTime(const std::string& dateTimeStr) {
     time.tm_hour = secondsOfDay / 60;
     return std::mktime(&time);
 }
+
+std::string SocketHandler::timeToString(std::time_t *time) {
+  std::string timeStr;
+  std::tm *timeInfo = std::localtime(time);
+  timeStr += std::to_string(timeInfo->tm_mday) += "/";
+  timeStr += std::to_string(timeInfo->tm_mon) += "/";
+  timeStr += std::to_string(timeInfo->tm_year) += "/";
+
+  int nbSeconds = timeInfo->tm_sec + 60*( timeInfo->tm_min + 60*( timeInfo->tm_hour ) );
+  timeStr += std::to_string(nbSeconds);
+  return timeStr;
+}
+
 
 void SocketHandler::translateFromBuffer(const std::string& encodedMessage, Message *message) {
     size_t pos = encodedMessage.find("I:{");
@@ -54,7 +69,7 @@ void SocketHandler::translateFromBuffer(const std::string& encodedMessage, Messa
         return;
     std::string idAuteurStr = encodedMessage.substr(pos + 3, posEnd - pos - 3);
     message->setIdAuteur(std::stoi(idAuteurStr));
-    // this->setUserId(std::stoi(idAuteurStr));
+    this->setUserId(std::stoi(idAuteurStr));
     pos = encodedMessage.find("D:{");
     if (pos == std::string::npos)
         return;
@@ -79,15 +94,44 @@ void SocketHandler::translateFromBuffer(const std::string& encodedMessage, Messa
         return;
     std::string contenuStr = encodedMessage.substr(pos + 3, posEnd - pos - 3);
     message->setContenu(contenuStr);
+}
 
 
+void SocketHandler::translateToBuffer(const char **buffer, int *bufferLen, Message *message) {
+
+  // Création de la chaine de caractères
+  std::string messageStr = "{I:{" + std::to_string(message->getMessageId()) + "},";
+  messageStr += "A:{" + std::to_string(message->getIdAuteur()) + "},";
+  messageStr += "D:{" + std::to_string(message->getIdDestinataire()) + "},";
+  std::time_t heureEnvoi = message->getHeureEnvoi();
+  messageStr += "S:{" + timeToString(&heureEnvoi);
+  messageStr += "C:{" + message->getContenu() + "}}\0";
+  std::cout << messageStr << "String Maseega\n";
+  // Écriture des réponses dans les buffers
+  *bufferLen = messageStr.length();
+  *buffer = messageStr.c_str();
+  std::cout << *buffer << " Buffer char*\n";
+}
+
+void SocketHandler::sendConversation(int userId1, int userId2, DbCommunicator dbCommunicator) {
+  int convLength = dbCommunicator.queryConversationLength(userId1, userId2);
+  Message *conversation = new Message[convLength];
+  dbCommunicator.queryConversation(conversation, convLength, userId1, userId2);
+  for(int i = 0; i < convLength; i++) {
+    const char *buffer;
+    int bufferLen;
+    translateToBuffer(&buffer, &bufferLen, conversation+i);
+    std::cout << "Buffer en sortie : " << *buffer << "\n";
+
+    send(new_socket, buffer, bufferLen, 0);
+  }
 }
 
 
 // Getters
 char *SocketHandler::getBuffer(){ return this->buffer; };
 int SocketHandler::getSocketUserId(){ return this->socketUserId; };
-
+int SocketHandler::getNbBytes(){ return this->nb_bytes; };
 
 // Setterss
 void SocketHandler::setUserId(int theUserId){ this->socketUserId = theUserId; };
