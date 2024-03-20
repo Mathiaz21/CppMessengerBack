@@ -41,6 +41,7 @@ void Message::printMessage(){
 // Utilities
 void Message::copyMessage(Message newMessage) {
     this->setMongoId( newMessage.getMongoId() );
+    this->setMessageId( newMessage.getMessageId() );
     this->setIdAuteur( newMessage.getIdAuteur() );
     this->setIdDestinataire( newMessage.getIdDestinataire() );
     this->setContenu( newMessage.getContenu() );
